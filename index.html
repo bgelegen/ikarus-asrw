@@ -1,0 +1,2219 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>İKARUS · ASRW 2026 | Su Roketi Rehberi ve Uçuş Simülatörü</title>
+<meta name="description" content="Airbus Sloshing Rocket Workshop 2026 için Türkçe rehber ve çalkalanan faydalı yük taşıyan su roketi uçuş simülatörü: kurallar, teslimler, roketin parçaları, 2B/3B uçuş, puan ve hesap raporu.">
+<meta name="theme-color" content="#060b12">
+<meta property="og:type" content="website">
+<meta property="og:title" content="İKARUS · ASRW 2026 | Su Roketi Rehberi ve Uçuş Simülatörü">
+<meta property="og:description" content="Airbus Sloshing Rocket Workshop 2026 için Türkçe rehber ve çalkalanan faydalı yük taşıyan su roketi uçuş simülatörü: kurallar, teslimler, roketin parçaları, 2B/3B uçuş, puan ve hesap raporu.">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-in">
+    <div class="brand">
+      <svg width="38" height="38" viewBox="0 0 38 38" aria-hidden="true">
+        <rect x="1" y="1" width="36" height="36" rx="10" fill="#0d1823" stroke="#4cc3f2" stroke-width="1.5"/>
+        <g transform="translate(19 19) rotate(-40)">
+          <path d="M-9 -3.2 H5 C8 -3.2 11 -1.4 13 0 C11 1.4 8 3.2 5 3.2 H-9 Z" fill="none" stroke="#eaf3fa" stroke-width="1.5"/>
+          <clipPath id="bm-clip"><path d="M-9 -3.2 H5 C8 -3.2 11 -1.4 13 0 C11 1.4 8 3.2 5 3.2 H-9 Z"/></clipPath>
+          <path d="M-9 0.6 Q-5 -1.4 -1 0.6 T7 0.4 V4 H-9 Z" fill="#38b6f0" clip-path="url(#bm-clip)"/>
+          <path d="M-9 -3.2 L-12 -7 L-6 -3.2 Z M-9 3.2 L-12 7 L-6 3.2 Z" fill="#ffb547"/>
+          <path d="M-10 -1.4 L-15 0 L-10 1.4 Z" fill="#4cc3f2"/>
+        </g>
+      </svg>
+      <div class="brand-t"><b>İKARUS · ASRW</b><span>Fırlatma kontrol · rehber ve simülatör</span></div>
+    </div>
+    <nav class="mainnav" role="tablist" aria-label="Bölümler">
+      <button type="button" role="tab" id="nav-konu" aria-controls="view-konu" aria-selected="true">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4.5h5a2 2 0 0 1 2 2V16a1.5 1.5 0 0 0-1.5-1.5H3zM17 4.5h-5a2 2 0 0 0-2 2V16a1.5 1.5 0 0 1 1.5-1.5H17z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        Konu Anlatımı
+      </button>
+      <button type="button" role="tab" id="nav-sim" aria-controls="view-sim" aria-selected="false">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5c2.6 1.8 3.8 4.6 3.6 8.2L12 14H8l-1.6-3.3C6.2 7.1 7.4 4.3 10 2.5z M8 14l-1.5 3M12 14l1.5 3M10 14v3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="10" cy="8" r="1.4" fill="currentColor"/></svg>
+        Simülasyon
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="view-konu" role="tabpanel" aria-labelledby="nav-konu">
+ <div class="doc">
+  <nav class="toc" id="toc" aria-label="Konular"></nav>
+  <div class="toc-select"><label for="toc-sel" class="eyebrow" style="display:block;margin-bottom:4px">Konu seçin</label><select id="toc-sel"></select></div>
+  <div id="topics">
+
+  <!-- ===================== GENEL ===================== -->
+  <article class="topic" id="t-genel" data-group="Yarışmayı tanıyalım" data-title="Genel bakış" hidden>
+    <header class="hero">
+      <div class="hero-txt">
+        <span class="eyebrow">Airbus Sloshing Rocket Workshop · Yarışmayı tanıyalım</span>
+        <h2>Yarışma ne, bizden ne bekliyor?</h2>
+        <p class="lead">Airbus Sloshing Rocket Workshop (ASRW), EUROAVIA tarafından düzenlenen, çevrimiçi ve yüz yüze aşamalardan oluşan bir tasarım yarışması. Takımlar, içindeki suyun çalkalanmasıyla dengesi bozulan düşük maliyetli ve yeniden kullanılabilir bir su roketi tasarlıyor, bunu iki raporla gerekçelendiriyor ve finalde uçuruyor.</p>
+        <div class="hero-cta">
+          <button type="button" class="try" data-goto="puan">Puanlama nasıl işliyor? →</button>
+          <button type="button" class="try ghost" data-gosim="ucus">Simülasyonu aç</button>
+        </div>
+      </div>
+      <svg class="hero-art" viewBox="0 0 420 270" role="img" aria-label="Çalkalanma tanklı bir su roketinin uçuş yolu üzerindeki kesit çizimi">
+        <defs>
+          <clipPath id="hero-pay"><rect x="8" y="-11" width="40" height="22" rx="6"/></clipPath>
+          <clipPath id="hero-ch"><rect x="-52" y="-11" width="58" height="22" rx="6"/></clipPath>
+        </defs>
+        <g class="ha-grid">
+          <path d="M0 30H420M0 70H420M0 110H420M0 150H420M0 190H420M0 230H420M40 0V270M100 0V270M160 0V270M220 0V270M280 0V270M340 0V270M400 0V270"/>
+        </g>
+        <line class="ha-ground" x1="20" y1="240" x2="410" y2="240"/>
+        <path class="ha-arc" d="M60 240 Q130 -150 360 240"/>
+        <circle class="ha-apex" cx="170" cy="45" r="4"/>
+        <text class="ha-t" x="180" y="40">tepe noktası</text>
+        <path class="ha-x" d="M355 235l10 10M365 235l-10 10"/>
+        <text class="ha-t" x="330" y="262">iniş</text>
+        <path class="ha-ang" d="M90 240 A30 30 0 0 0 64.2 210.3"/>
+        <text class="ha-t" x="96" y="232">85° ± 3°</text>
+        <g class="ha-spray">
+          <circle cx="62" cy="196" r="2.2"/><circle cx="58" cy="206" r="1.8"/><circle cx="66" cy="210" r="1.6"/><circle cx="54" cy="218" r="1.4"/>
+          <circle cx="61" cy="224" r="1.3"/><circle cx="50" cy="230" r="1.1"/><circle cx="69" cy="228" r="1.1"/><circle cx="57" cy="236" r="0.9"/>
+        </g>
+        <g transform="translate(72 128) rotate(-82)">
+          <path class="ha-fin" d="M-60 -11 L-46 -11 L-60 -26 L-66 -26 Z"/>
+          <path class="ha-fin" d="M-60 11 L-46 11 L-60 26 L-66 26 Z"/>
+          <path class="ha-noz" d="M-62 -5 L-68 -4 L-68 4 L-62 5 Z"/>
+          <rect class="ha-body" x="-62" y="-9" width="12" height="18" rx="3"/>
+          <rect class="ha-body" x="-52" y="-11" width="58" height="22" rx="6"/>
+          <g clip-path="url(#hero-ch)"><rect class="ha-water" x="-52" y="-11" width="17" height="22"/></g>
+          <rect class="ha-cpl" x="5" y="-10" width="4" height="20" rx="1"/>
+          <rect class="ha-body" x="8" y="-11" width="40" height="22" rx="6"/>
+          <g clip-path="url(#hero-pay)"><path class="ha-water" d="M8 13 L48 13 L48 -4 Q38 -1 28 2 T8 6 Z"/></g>
+          <path class="ha-surf" d="M8 6 Q18 3 28 2 T48 -4"/>
+          <path class="ha-baf" d="M21 -11v4M21 11v-4M35 -11v4M35 11v-4"/>
+          <path class="ha-nose" d="M48 -11 C60 -11 70 -5 76 0 C70 5 60 11 48 11 Z"/>
+        </g>
+        <path class="ha-lead" d="M88 100 L128 108 H142"/>
+        <text class="ha-t" x="146" y="112">çalkalanma tankı · %50 su</text>
+        <path class="ha-lead" d="M82 150 L106 160 H120"/>
+        <text class="ha-t" x="124" y="164">basınç haznesi · itki suyu</text>
+      </svg>
+    </header>
+
+    <div class="facts">
+      <div class="fact"><b>≤ 1,5 m</b><span>roket boyu</span></div>
+      <div class="fact"><b>≤ 5 kg</b><span>dolu kalkış ağırlığı</span></div>
+      <div class="fact"><b>&lt; 10 atm</b><span>fırlatma basıncı (147 psi)</span></div>
+      <div class="fact"><b>≤ 500 €</b><span>toplam maliyet</span></div>
+      <div class="fact"><b>≥ 500 ml</b><span>çalkalanan su, tank %50 dolu</span></div>
+      <div class="fact"><b>85° ± 3°</b><span>fırlatma açısı</span></div>
+      <div class="fact"><b>≤ 2,25 m</b><span>kanat açıklığı</span></div>
+      <div class="fact"><b>3</b><span>finalde fırlatma hakkı</span></div>
+    </div>
+
+    <div class="blk">
+      <h3>Neden çalkalanma?</h3>
+      <div class="prose">
+        <p>Tank içindeki sıvının hareket etmesine <b>çalkalanma (sloshing)</b> denir. Uçak tasarımında yakıtın tank içindeki hareketi; yakıt yönetimi kontrol sisteminin tasarımını, uçağın kullanım özelliklerini ve sonunda tank yapısının dayanımını doğrudan etkiler.</p>
+        <p>Modern uydularda ağırlığın büyük kısmı sıvı itici maddedir. Bu sıvının hareketi, yörüngedeki kontrollü manevralarda ve fırlatma sırasındaki rüzgâr darbelerinde aracın dinamiğini ciddi biçimde değiştirebilir. Yarışma bu gerçek mühendislik problemini küçük ölçekte, bir su roketiyle canlandırıyor.</p>
+      </div>
+    </div>
+
+    <div class="cols2">
+      <div class="box ask">
+        <h4>Yarışma ne istiyor?</h4>
+        <ul>
+          <li>Basınçsız bir tankta taşınan suyun hareketiyle dengesi bozulan, <b>düşük maliyetli ve yeniden kullanılabilir</b> bir roket.</li>
+          <li>Çalkalanmanın yarattığı dinamik kuvvetleri yöneterek <b>menzili, uçuş süresini ve sıvı faydalı yük kapasitesini</b> en üst düzeye çıkarmanız.</li>
+          <li>Kontrolün pasif ve/veya aktif yöntemlerle yapılması; bu mekanizmanın performansı tasarımın kilit unsuru.</li>
+          <li>Tasarımın iki raporla anlatılıp gerekçelendirilmesi: Kavramsal Tasarım Raporu ve Nihai Tasarım Raporu.</li>
+          <li>Finale kalırsanız: 45 dakikalık tasarım incelemesi, roketi yerinde birleştirme ve en fazla üç fırlatma.</li>
+        </ul>
+      </div>
+      <div class="box todo">
+        <h4>Biz ne yapmalıyız?</h4>
+        <ul>
+          <li>2–6 kişilik bir takım kurup görevleri dağıtmak (proje yönetimi, aerodinamik, yapı ve üretim, itki ve fırlatma, çalkalanma kontrolü, rapor ve bütçe).</li>
+          <li>Web seminerlerini izleyip çalkalanma ve roket fiziğini öğrenmek.</li>
+          <li>Birbirinden gerçekten farklı birkaç konsept geliştirip hesaplarla karşılaştırmak.</li>
+          <li>Seçilen tasarımı ayrıntılandırmak, simülasyon ve testlerle doğrulamak.</li>
+          <li>Bütçeyi ve Malzeme Listesi'ni baştan disiplinli tutmak.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="blk">
+      <h3>Jürinin özellikle vurguladıkları</h3>
+      <div class="prose">
+        <p><b>Esnek ve yaratıcı düşünün.</b> Tankların yerleşimi klasik roket şekline uymak zorunda değil; uçak konseptlerinin avantaj ve dezavantajlarını değerlendirmeniz açıkça teşvik ediliyor. Kanat açıklığı için 2,25 m'lik bir sınır konmuş olması da bu yönde okunabilir. <span class="ref">TY 2.1.2 · 2.1.11</span></p>
+        <p><b>Başka disiplinlerden ilham.</b> Teknik raporun girişinde, havacılığın ilham alması gereken başka alanlardaki fikir ve araştırmalara ilişkin derinlemesine bir analiz bekleniyor. <span class="ref">TY 2.1.11</span></p>
+      </div>
+    </div>
+
+    <div class="cols2">
+      <div class="box plain">
+        <h4>Kimler katılabilir?</h4>
+        <p>Takımlar 2 ile 6 kişi arasında olur. Üyeler başvuru anında bir üniversiteye kayıtlı lisans veya yüksek lisans öğrencisi olmalı (BSc, MSc, BEng, MEng veya eşdeğeri). <span class="ref">TY 4</span></p>
+      </div>
+      <div class="box plain">
+        <h4>Kazanan nasıl belirlenir?</h4>
+        <p>Genel kazanan; iki rapor puanına, yarışmadaki uçuş performansına ve finaldeki tasarım incelemesine dair panel değerlendirmesine göre belirlenir. Final puanı %70 uçuş, %20 tasarım incelemesi, %10 Nihai Raporun Ansys ve MathWorks puanlamasıdır. <span class="ref">TY 3 · Tİ 1</span></p>
+      </div>
+    </div>
+
+    <div class="blk">
+      <h3>Kaynak belgeler</h3>
+      <p class="small">Türkçe çevirileri klasörünüzdeki <span class="mono">Türkçe</span> alt klasöründe. Bu rehberde kısaltmalarla anılıyorlar.</p>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Kısaltma</th><th>Belge</th><th>Dosya</th></tr></thead>
+        <tbody>
+          <tr><td>TY</td><td>Teknik Yönetmelik</td><td class="num">ASRW_Technical_Regulations_2026_TR.pdf</td></tr>
+          <tr><td>KTR</td><td>Kavramsal Tasarım Raporu Kılavuzu</td><td class="num">ASRW26-Conceptual-Design-Report-Guidelines_TR.pdf</td></tr>
+          <tr><td>NTR</td><td>Nihai Tasarım Raporu Kılavuzu</td><td class="num">ASRW26-Final-Design-Report-Guidelines_TR.pdf</td></tr>
+          <tr><td>ML</td><td>Malzeme Listesi (BoM) Kılavuzu</td><td class="num">ASRW26-Bill-of-Materials_TR.pdf</td></tr>
+          <tr><td>Tİ</td><td>Tasarım İncelemesi Kılavuzu</td><td class="num">ASRW26-Design-Review-Guidelines_TR.pdf</td></tr>
+          <tr><td>SR</td><td>Su Roketleri: Pratik Öneriler sunumu</td><td class="num">Water-Rockets-Practical-Advice-2026_TR.pdf</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </article>
+
+  <!-- ===================== TAKVİM ===================== -->
+  <article class="topic" id="t-takvim" data-group="Yarışmayı tanıyalım" data-title="Takvim ve aşamalar" hidden>
+    <header class="t-head">
+      <span class="eyebrow">Yarışmayı tanıyalım</span>
+      <h2>Takvim ve aşamalar</h2>
+      <p class="lead">Yarışma iki çevrimiçi ve bir yüz yüze aşamadan oluşur. Her aşamanın sonunda bir teslim ve bir eleme vardır.</p>
+    </header>
+    <div class="callout warn">
+      <b>Tarihler 2026 dönemine ait</b>
+      <p>Aşağıdaki takvim 2026 belgelerinden alındı ve geçmiş tarihlerdir. 2027 dönemine hazırlanıyorsanız yapı büyük olasılıkla benzer kalır, ancak tarihleri ve kuralları yeni belgelerden doğrulayın.</p>
+    </div>
+    <ol class="tl">
+      <li><span class="tl-d">Şubat 2026 ortası</span><div><b>Kayıt ve 1. web semineri dizisi</b><p>Konuşmacı Serisi'nin ilk turu: çalkalanma ve roket tasarımının matematiği ve fiziği, aerodinamik, itki ve diğer konular. Kesin tarihler takımlara bildirilir. <span class="ref">TY 4.1</span></p></div></li>
+      <li><span class="tl-d">31 Mart 2026 · 12:00 UTC</span><div><b>Kavramsal Tasarım Raporu (KTR) teslimi</b><p>Yarışmaya katılmak isteyen tüm takımlar teslim eder. Rapor literatürden ve web seminerlerinden çıkarılan dersleri içermelidir. <span class="ref">TY 1.2, 4.1</span></p></div></li>
+      <li><span class="tl-d">17 Nisan 2026 öncesi</span><div><b>2. aşamaya geçen 20 takım açıklanır</b><p>KTR'den en yüksek puanı alan yirmi takım devam eder. Seçilen takımlardan, yönetmeliğe aykırı tasarım özellikleri varsa değişiklik istenebilir. <span class="ref">TY 3.1, 4.1</span></p></div></li>
+      <li><span class="tl-d">Nisan başı – Haziran</span><div><b>2. web semineri dizisi</b><p>Takımlar tasarımlarını geliştirir ve ek seminerlere katılır. <span class="ref">TY 4.2</span></p></div></li>
+      <li><span class="tl-d">14 Haziran 2026 · 12:00 UTC</span><div><b>Nihai Tasarım Raporu (NTR) ve Malzeme Listesi</b><p>NTR ile birlikte Malzeme Listesi de teslim edilir; teslimden sonra liste dondurulmuş sayılır. <span class="ref">TY 3.2, 3.3 · ML 1, 4.1</span></p></div></li>
+      <li><span class="tl-d">30 Haziran 2026 öncesi</span><div><b>Finalistler açıklanır</b><p>En yüksek puanlı en az beş takım finale kalır. Finale katılım NTR puanına dayanır. <span class="ref">TY 3, 4.2</span></p></div></li>
+      <li><span class="tl-d">Kabulden itibaren 3 hafta</span><div><b>Malzeme Listesi değişiklik penceresi</b><p>Finale kabul onaylandıktan sonra üç hafta içinde listede değişiklik yapılabilir. Bu sürede ev sahibinin sorularına yanıt vermeye hazır olun. <span class="ref">ML 5</span></p></div></li>
+      <li><span class="tl-d">17–23 Ağustos 2026</span><div><b>Final, Rzeszów (Polonya)</b><p>Varış ve ayrılış dâhil 7 gün. İlk üç gün içinde, montajdan önce yerinde tasarım incelemesi; ardından montaj, tasarım incelemesi sunumu ve fırlatmalar. <span class="ref">TY 2.5.6, 4.3</span></p></div></li>
+    </ol>
+    <div class="cols2">
+      <div class="box ask">
+        <h4>Yarışma ne istiyor?</h4>
+        <ul>
+          <li>Teslimleri <b>son tarih ve saatten önce</b> yapmanız (saatler UTC; Türkiye UTC+3, yani 12:00 UTC = 15:00 TSİ).</li>
+          <li>Her aşamada bir önceki geri bildirimi kullanmanız; KTR içeriği NTR'de yeniden kullanılabilir ve kullanılmalı.</li>
+        </ul>
+      </div>
+      <div class="box todo">
+        <h4>Biz ne yapmalıyız?</h4>
+        <ul>
+          <li>Takvimi geriye doğru planlayın: KTR'den <b>en az 2 hafta önce</b> konsept seçimini bitirin, son haftayı yalnızca yazım ve düzeltmeye ayırın.</li>
+          <li>Seminer notlarını ortak bir klasörde toplayın; KTR'de "seminerlerden çıkarılan dersler" bekleniyor.</li>
+          <li>NTR'den önce prototip ve test zamanı bırakın (fiziksel test zorunlu değil ama doğrulamaya çok yardımcı).</li>
+          <li>Finalist olursanız, final öncesindeki yaz aylarını alt montajları önceden üretmeye ayırın.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===================== PUAN ===================== -->
+  <article class="topic" id="t-puan" data-group="Yarışmayı tanıyalım" data-title="Puanlama ve uçuş formülü" hidden>
+    <header class="t-head">
+      <span class="eyebrow">Yarışmayı tanıyalım</span>
+      <h2>Puanlama ve uçuş formülü</h2>
+      <p class="lead">Raporlar sizi finale taşır; finalde ise puanın büyük kısmı uçuştan gelir. Uçuş puanını anlamak tasarımın yönünü belirler.</p>
+    </header>
+    <div class="formula" aria-label="Uçuş puanı formülü">
+      <span class="eyebrow" style="color:inherit;opacity:.8">Teknik Yönetmelik 2.6.2</span>
+      <div class="eq">
+        <span>Uçuş Puanı =</span>
+        <span class="nw">( <span class="sqrt"><i>√</i><b>Yatay mesafe² + İrtifa²</b></span> + Süre )</span>
+        <span class="nw" style="display:inline-flex;align-items:center;gap:8px">× <span class="frac"><span>Faydalı yük</span><span>Kalkış ağırlığı</span></span></span>
+      </div>
+      <p>Mesafe ve irtifa metre, süre saniye, faydalı yük ve kalkış ağırlığı kilogram cinsindendir.</p>
+    </div>
+    <div class="blk">
+      <h3>Formülün parçaları</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Terim</th><th>Anlamı</th><th>Nasıl ölçülür?</th></tr></thead>
+        <tbody>
+          <tr><td>Yatay mesafe</td><td>Fırlatma noktasıyla iniş noktası arasındaki yatay uzaklık.</td><td>Birincil: ölçüm tekerleği; yedek: şerit metre.</td></tr>
+          <tr><td>İrtifa</td><td>Uçuşta ulaşılan en yüksek nokta.</td><td>Birincil: organizasyonun verdiği altimetre; yedek: gözlemci yöntemi.</td></tr>
+          <tr><td>Süre</td><td>Toplam uçuş süresi.</td><td>Kronometre.</td></tr>
+          <tr><td>Faydalı yük</td><td>Çalkalanma tankında taşınan su (belgelerde "payload").</td><td>Tartı.</td></tr>
+          <tr><td>Kalkış ağırlığı</td><td>Roketin sıvılarla dolu hâldeki toplam kütlesi (TOW).</td><td>Tartı.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small">Ölçüm araçları Tasarım İncelemesi Kılavuzu bölüm 2'den. "Faydalı yük"ün çalkalanma tankındaki su olduğu yorumdur; belgede yalnızca "Payload (kg)" yazar.</p>
+    </div>
+    <div class="blk">
+      <h3>Örnek hesap: İKARUS-1</h3>
+      <div class="prose">
+        <p>Simülasyondaki örnek roket 8 bar'da fırlatılıyor, 1 kg su taşıyor ve kalkışta 2,66 kg geliyor. Model 2 m/s rüzgârda 12,33 m tepe noktası, 5,12 m yatay mesafe ve 3,32 s uçuş süresi hesaplıyor:</p>
+      </div>
+      <div class="calc"><span>( √(5,12² + 12,33²) + 3,32 ) × 1,00 / 2,66</span><span>= ( 13,35 + 3,32 ) × 0,376 = 6,27 puan</span></div>
+      <div class="prose">
+        <p>Dikkat edin: parantez içindeki uçuş değeri ne kadar iyi olursa olsun, <b>yük/ağırlık oranı</b> onu çarpar. Oran 0,376'dan 0,5'e çıkarsa aynı uçuş %33 daha fazla puan getirir. Bu yüzden hafif yapı ve mümkün olduğunca çok çalkalanan su, formülün iki yanını da etkiler: su arttıkça çarpan büyür ama roket ağırlaşıp daha az uçar. Aradaki dengeyi bulmak tasarımın özü.</p>
+      </div>
+      <button type="button" class="try" data-sim="puan">Simülasyonda puanı incele →</button>
+    </div>
+    <div class="blk">
+      <h3>Final puanının dağılımı</h3>
+      <div class="wbars" style="--max:70">
+        <div class="wb"><span>Uçuş performansı</span><span class="wb-bar"><i style="--w:70"></i></span><span class="wb-v">%70</span></div>
+        <div class="wb"><span>Tasarım incelemesi (sunum + soru-cevap)</span><span class="wb-bar"><i style="--w:20"></i></span><span class="wb-v">%20</span></div>
+        <div class="wb"><span>NTR puanı (Ansys ve MathWorks)</span><span class="wb-bar"><i style="--w:10"></i></span><span class="wb-v">%10</span></div>
+      </div>
+      <p class="small">Kaynak: Tİ 1. Belgeler, puanlı denemelerden hangisinin (en iyisi, ortalaması) sayıldığını açıkça yazmıyor; organizatörlere sorun.</p>
+    </div>
+    <div class="cols2">
+      <div class="box ask">
+        <h4>Yarışma ne istiyor?</h4>
+        <ul>
+          <li>Ölçülebilir bir uçuş: mesafe, irtifa ve süre birlikte.</li>
+          <li>Taşınan suyun roket ağırlığına oranının yüksek olması.</li>
+          <li>Altimetrenin doğru çalışması; aksi hâlde %25 ceza.</li>
+        </ul>
+      </div>
+      <div class="box todo">
+        <h4>Biz ne yapmalıyız?</h4>
+        <ul>
+          <li>Tasarım kararlarını formüle göre değerlendirin: her gram yapı kütlesi puanı iki yoldan düşürür.</li>
+          <li>Raporlarda başarı kriterlerini bu formülle sayısal olarak tanımlayın (ör. "uçuş puanı ≥ 8").</li>
+          <li>Simülasyonda hangi parametrenin puanı ne kadar oynattığını görün ve bunu raporda duyarlılık analizi olarak kullanın.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===================== TANKLAR ===================== -->
+  <article class="topic" id="t-tanklar" data-group="Teknik kurallar" data-title="Roket, tanklar ve ağırlık" hidden>
+    <header class="t-head">
+      <span class="eyebrow">Teknik kurallar</span>
+      <h2>Roket, tanklar ve ağırlık</h2>
+      <p class="lead">Aracın ana yapısı en az iki su tankından oluşur: bir basınçsız çalkalanma tankı ve en az bir basınçlı itki tankı. Kuralların çoğu bu iki tank etrafında döner.</p>
+    </header>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Kural</th><th>Ayrıntı</th><th>Kaynak</th></tr></thead>
+      <tbody>
+        <tr><td>Boy</td><td>Aracın uzunluğu en fazla 1,5 m.</td><td class="ref">TY 2.1.1</td></tr>
+        <tr><td>Kanat açıklığı</td><td>En fazla 2,25 m.</td><td class="ref">TY 2.1.2</td></tr>
+        <tr><td>Tank yapısı</td><td>Kolay temin edilebilen parçalardan oluşan en az iki su tankı: 1 basınçsız, 1 veya daha fazla basınçlı.</td><td class="ref">TY 2.1.4</td></tr>
+        <tr><td>Çalkalanma tankı</td><td>En az 500 ml su; hacimce %50 su, %50 hava. %50 doluluk çizgisi jürinin görebileceği şekilde açıkça işaretlenir.</td><td class="ref">TY 2.1.5</td></tr>
+        <tr><td>Kesit kuralı</td><td>Her eksende en küçük kesit alanı, en büyük kesit alanının %50'sinden az olamaz. En büyük kesit dış çevreyle belirlenir (içi boş silindir, aynı dış çaplı dolu silindirle aynı kesite sahip sayılır).</td><td class="ref">TY 2.1.5</td></tr>
+        <tr><td>Basınçlı tanklar</td><td>Yalnızca ortam sıcaklığında su içerir. İtki için yalnızca bunlar kullanılır; rokete birlikte fırlatılır, ancak havalandıktan sonra ayrılabilir. Fırlatmadan önce basınca dayanıklılıkları kontrol edilir.</td><td class="ref">TY 2.1.6</td></tr>
+        <tr><td>Su dengesi</td><td>İtici suyun toplam kütlesi çalkalanan suyun kütlesinden büyük olamaz.</td><td class="ref">TY 2.1.7</td></tr>
+        <tr><td>Kalkış ağırlığı</td><td>Sıvılarla dolu hâlde en fazla 5 kg.</td><td class="ref">TY 2.1.8</td></tr>
+        <tr><td>Yeniden kullanım</td><td>Finalde en fazla 3 fırlatma; kurtarılabilir ve yeniden kullanılabilir tasarım şiddetle tavsiye edilir.</td><td class="ref">TY 2.1.9</td></tr>
+        <tr><td>Hacim doğrulama</td><td>Tanklar gövdeye kalıcı takılmadan önce jüriye gösterilir; jüri mühürleyebilir.</td><td class="ref">TY 2.3.3</td></tr>
+        <tr><td>Tank içeriği</td><td>Sıvı yalnızca su olur; sünger veya emici kaplama ve serbest nesne yasak. Jüri uçuştan sonra tankı kesip açabilir.</td><td class="ref">TY 2.3.4 · Tİ 3</td></tr>
+      </tbody>
+    </table></div>
+    <div class="blk">
+      <h3>Kesit kuralı ne demek?</h3>
+<p class="dg-hint">Çizimi görmek için yana kaydırın →</p>
+      <div class="diagram">
+        <svg viewBox="0 0 760 210" role="img" aria-label="Kesit kuralı örnekleri: düz silindir uygun, ortası daralan tank uygun değil">
+          <text class="dg-t" x="20" y="24">Düz duvarlı tank</text>
+          <rect class="dg-fill" x="20" y="44" width="280" height="90" rx="14"/>
+          <path class="dg-water" d="M22 89 H298 V120 a12 12 0 0 1 -12 12 H34 a12 12 0 0 1 -12 -12 Z"/>
+          <line class="dg-line" x1="20" y1="89" x2="300" y2="89" stroke-dasharray="4 4"/>
+          <text class="dg-s" x="306" y="93">%50 çizgisi</text>
+          <text class="dg-ok" x="20" y="160">✓ Kesit boyunca neredeyse sabit</text>
+          <text class="dg-s" x="20" y="180">Su serbestçe çalkalanır.</text>
+          <text class="dg-t" x="420" y="24">Ortası daralan tank</text>
+          <path class="dg-fill" d="M420 54 q0 -10 14 -10 h70 q20 0 40 34 q20 -34 40 -34 h70 q14 0 14 10 v70 q0 10 -14 10 h-70 q-20 0 -40 -34 q-20 34 -40 34 h-70 q-14 0 -14 -10 Z"/>
+          <ellipse class="dg-bad" cx="544" cy="89" rx="16" ry="22"/>
+          <text class="dg-badt" x="420" y="160">✕ Darboğaz: en küçük kesit %50'nin altında</text>
+          <text class="dg-s" x="420" y="180">Daralma suyun hareketini kısıtlar; kural bunu önler.</text>
+        </svg>
+      </div>
+      <div class="callout warn">
+        <b>Belirsiz nokta</b>
+        <p>Kuralı harfiyen uygularsanız, kapalı her tankın yuvarlak uçlarındaki kesitler sıfıra yaklaşır; şişe boynu da çok dardır. Kuralın asıl amacı muhtemelen kum saati benzeri darboğazları önlemek. PET şişe boynu ve kapakların nasıl değerlendirileceğini yazılı olarak organizatörlere (sloshing@euroavia.eu) sorun.</p>
+      </div>
+    </div>
+    <div class="cols2">
+      <div class="box ask">
+        <h4>Yarışma ne istiyor?</h4>
+        <ul>
+          <li>Ölçülerine ve doluluğuna jürinin kolayca bakabileceği, kurallara açıkça uyan tanklar.</li>
+          <li>İtki suyunun çalkalanan sudan fazla olmaması; böylece çalkalanma etkisi gerçekten önemli kalır.</li>
+          <li>Birden fazla kez uçabilecek, sağlam inen bir araç.</li>
+        </ul>
+      </div>
+      <div class="box todo">
+        <h4>Biz ne yapmalıyız?</h4>
+        <ul>
+          <li>Tank seçimini erkenden yapın ve hacimleri ölçün (tartarak: 1 g su ≈ 1 ml).</li>
+          <li>%50 çizgisini kalıcı ve net işaretleyin; tankın dolum ve boşaltım yolunu tasarlayın.</li>
+          <li>Kütle bütçesi tutun: yapı + çalkalanan su + itki suyu ≤ 5 kg.</li>
+          <li>Tankları gövdeye takmadan önce jüriye gösterebilecek şekilde modüler tasarlayın.</li>
+          <li>Kurtarma sistemini (paraşüt, kanatla süzülme, sağlam burun vb.) konsept aşamasında düşünün.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===================== FIRLATMA ===================== -->
+  <article class="topic" id="t-firlatma" data-group="Teknik kurallar" data-title="Fırlatma, basınç ve fırlatma penceresi" hidden>
+    <header class="t-head">
+      <span class="eyebrow">Teknik kurallar</span>
+      <h2>Fırlatma, basınç ve fırlatma penceresi</h2>
+      <p class="lead">İtki yalnızca basınçlı hava ve ortam sıcaklığındaki suyla sağlanır. Fırlatma düzeneğini, basınçlandırmayı ve güvenli boşaltmayı da siz tasarlarsınız.</p>
+    </header>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Kural</th><th>Ayrıntı</th><th>Kaynak</th></tr></thead>
+      <tbody>
+        <tr><td>Basınç</td><td>Dikey fırlatma, 10 atmosferden (147 psi) düşük basınçta. Tasarım İncelemesi kılavuzu "10 bar (145 psi)" der.</td><td class="ref">TY 2.2.1 · Tİ 3</td></tr>
+        <tr><td>Fırlatma açısı</td><td>85° (dikeyden 5°), ±3° tolerans; ölçülür, uymazsa ceza.</td><td class="ref">TY 2.1.3</td></tr>
+        <tr><td>Basınçlandırma</td><td>Tasarım, itki tanklarını havayla basınçlandırma araçlarını içerir; basınçlandırma ve boşaltmanın güvenli mesafeden nasıl yapılacağı gösterilir.</td><td class="ref">TY 2.2.2</td></tr>
+        <tr><td>Gaz ve itici</td><td>Yalnızca hava ve ortam sıcaklığında su. Pervane, itici gaz, motor ve helyum gibi havadan hafif gazlar yasak.</td><td class="ref">TY 2.2.3</td></tr>
+        <tr><td>Hava/su oranı</td><td>İtki tankındaki oran serbesttir ve performansı optimize etmek için kullanılmalıdır.</td><td class="ref">TY 2.2.4</td></tr>
+        <tr><td>Güvenli mesafe</td><td>En az 5 m uzaktan fırlatılabilmeli; alanın güvenlik kurallarına göre daha uzak istenebilir.</td><td class="ref">TY 2.2.5</td></tr>
+        <tr><td>Bağlantı</td><td>Basınçlandırma arayüzünde standart Rectus Type 26 hızlı kaplin erkek parçası. İç tesisatın basınca dayanıklılığı en az bir simülasyon/modellemeyle gösterilir; fırlatmadan önce basınç testi zorunlu. Ortak kompresör arayüzü organizasyondan.</td><td class="ref">TY 2.2.6</td></tr>
+        <tr><td>Video</td><td>Takım, irtifa ve sürenin doğrulanması için uçuşunu organizasyonun belirlediği noktadan videoya kaydeder.</td><td class="ref">TY 2.2.7</td></tr>
+        <tr><td>Fırlatma penceresi</td><td>İlk gelen alır esasıyla katı 30 dakikalık pencereler: kurulum, basınçlandırma ve fırlatma dâhil. Süre bitince roket havalanmamışsa deneme yanar (o uçuş 0 puan).</td><td class="ref">TY 2.1.10 · Tİ 5</td></tr>
+        <tr><td>Deneme sayımı</td><td>Basınçlandırma başladığı anda deneme sayılır; sonra iptal edilirse yine 3 haktan biri gider. Basınçlandırmadan önce "Test" veya "Puanlı" fırlatma beyan edilir.</td><td class="ref">TY 2.1.10 · Tİ 5</td></tr>
+      </tbody>
+    </table></div>
+    <div class="blk">
+      <h3>Fırlatma düzeneği seçenekleri</h3>
+      <div class="cols3">
+        <div class="box plain"><h4>Clark kablo bağı fırlatıcısı</h4><p>22 mm tam çaplı nozullar için. Yapımı kolay, fırlatma tüpü kolay takılır, çevrimiçi çok eğitim var. <span class="ref">SR</span></p></div>
+        <div class="box plain"><h4>Gardena / Maxiflow</h4><p>Bahçe hortumu hızlı bağlantısıyla çalışır; küçük nozullar (9–16 mm) için uygun, özel nozul gerekir. <span class="ref">SR</span></p></div>
+        <div class="box plain"><h4>Fırlatma tüpü</h4><p>Nozulun içinden uzanan boru, su atılmadan önce roketi piston gibi iter; sunuma göre irtifayı %10–15 artırabilir. Yarışma düzeneğine uygunluğunu sorun. <span class="ref">SR</span></p></div>
+      </div>
+    </div>
+    <div class="cols2">
+      <div class="box ask">
+        <h4>Yarışma ne istiyor?</h4>
+        <ul>
+          <li>Güvenli, uzaktan kumandalı basınçlandırma ve <b>basınç boşaltma</b>; finalde gösterilmesi istenebilir.</li>
+          <li>Rectus Type 26 uyumlu, basınç testi yapılmış iç tesisat.</li>
+          <li>30 dakikada kurulup fırlatılabilen bir sistem.</li>
+        </ul>
+      </div>
+      <div class="box todo">
+        <h4>Biz ne yapmalıyız?</h4>
+        <ul>
+          <li>Fırlatma rampasını 85° ±3° açıyı tekrarlanabilir verecek şekilde tasarlayın (açı ölçer ekleyin).</li>
+          <li>Uzaktan tetik ve boşaltma valfini 5 m'den uzun hortum/iple çalıştırın.</li>
+          <li>Tesisatın basınç dayanımını hesap/simülasyonla gösterin ve hidrostatik testle doğrulayın.</li>
+          <li>Fırlatma kontrol listesi yazıp 30 dakikalık pencereyi provada süre tutarak deneyin.</li>
+          <li>Strateji belirleyin: ilk denemeyi "Test" mi yoksa "Puanlı" mı beyan edeceksiniz?</li>
+        </ul>
+        <button type="button" class="try" data-goto="atis">Fırlatma adım adım nasıl yapılır? →</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===================== KONTROL ===================== -->
+  <article class="topic" id="t-kontrol" data-group="Teknik kurallar" data-title="Çalkalanma ve kontrol mekanizması" hidden>
+    <header class="t-head">
+      <span class="eyebrow">Teknik kurallar</span>
+      <h2>Çalkalanma ve kontrol mekanizması</h2>
+      <p class="lead">Yarışmanın kalbi: çalkalanan suyun dengeyi bozan hareketini tahmin etmek ve pasif, aktif ya da ikisinin birleşimiyle kontrol etmek. Nasıl tahmin ettiğinizi ve çözümünüzü neden seçtiğinizi raporda açıklamanız gerekir. <span class="ref">TY 2.3</span></p>
+    </header>
+    <div class="blk">
+      <h3>Çalkalanma fiziği kısaca</h3>
+      <div class="prose">
+        <p>Yarısı dolu bir tanktaki su, bir sarkaç gibi kendi doğal frekansında salınır. Silindirik bir tankın ilk yanal modu için doğal açısal frekans yaklaşık şöyledir:</p>
+      </div>
+      <div class="calc"><span>ω² = (1,841 · g<sub>etkin</sub> / R) · tanh(1,841 · h / R)</span><span>R: tank yarıçapı · h: su derinliği · g<sub>etkin</sub>: suyu tankın dibine bastıran ivme</span></div>
+      <div class="prose">
+        <p>10 cm çaplı bir şişede 1 L su için yerde bu yaklaşık <b>3 Hz</b> eder. İtki sırasında roket yaklaşık 20 g ivmelenirken g<sub>etkin</sub> 20 kat büyür ve frekans √20 ≈ 4,5 kat artarak 13–14 Hz'e çıkar. İtki bittiğinde ise roket neredeyse serbest düşüşe geçer; su "ağırlıksız" kalır ve tankın içinde serbestçe dolaşır. Bu yüzden çalkalanma en çok itki bittikten sonraki süzülme evresinde etkilidir.</p>
+        <p>Su yana kaydıkça hem yanal bir kuvvet hem de ağırlık merkezine göre bir moment oluşur. Çalkalanma tankı ağırlık merkezinin önündeyse bu moment roketin burnunu yana çevirmeye çalışır. Kanatçıkların ürettiği geri getirici moment buna karşı koyar.</p>
+      </div>
+    </div>
+    <div class="blk">
+      <h3>Kontrol seçenekleri</h3>
+      <div class="cols2">
+        <div class="box plain">
+          <h4>Pasif kontrol</h4>
+          <p><b>Bölme levhaları (baffle):</b> Halka, delikli plaka veya kısmi bölmeler suyun hareketini keser ve enerjisini sönümler. Tank yapısal olarak bölünmeden sönüm artar.</p>
+          <p><b>Kural:</b> Tek bir levhanın tank içindeki en büyük kesit alanı, iç duvarların kesit alanının %50'sini geçemez; her XYZ ekseninde ayrı ayrı: max(levha A) &lt; 0,5 · min(tank A). <span class="ref">TY 2.3.1</span></p>
+          <p><b>Diğer pasif fikirler:</b> Tank yerleşimi (çalkalanma tankını ağırlık merkezine yakın koymak momenti azaltır), kanatçık boyutu, uçak benzeri konfigürasyonlar.</p>
+        </div>
+        <div class="box plain">
+          <h4>Aktif kontrol</h4>
+          <p><b>Kontrol yüzeyleri:</b> Servo ile oynayan kanatçıklar, bir uçuş bilgisayarı ve sensör (ör. ivmeölçer/jiroskop) ile çalkalanmaya tepki verir. <span class="ref">TY 2.3.2</span></p>
+          <p>Önceden hazırlanmış elektronik ve programlanmış uçuş bilgisayarına izin verilir, ancak Malzeme Listesi'nde yer almalı. <span class="ref">ML 3</span></p>
+          <p>Aktif sistem puan potansiyelini artırabilir ama kütle, maliyet ve arıza riski getirir; raporda bu ödünleşimi açıkça tartışın.</p>
+        </div>
+      </div>
+<p class="dg-hint">Çizimi görmek için yana kaydırın →</p>
+      <div class="diagram">
+        <svg viewBox="0 0 760 200" role="img" aria-label="Halka bölme levhası örneği ve kesit alanı oranı">
+          <text class="dg-t" x="20" y="24">Yandan görünüş: iki halka levha</text>
+          <rect class="dg-fill" x="20" y="44" width="300" height="100" rx="16"/>
+          <path class="dg-water" d="M22 94 H318 V128 a14 14 0 0 1 -14 14 H36 a14 14 0 0 1 -14 -14 Z"/>
+          <line class="dg-baffle" x1="120" y1="46" x2="120" y2="64"/><line class="dg-baffle" x1="120" y1="142" x2="120" y2="124"/>
+          <line class="dg-baffle" x1="220" y1="46" x2="220" y2="64"/><line class="dg-baffle" x1="220" y1="142" x2="220" y2="124"/>
+          <text class="dg-s" x="20" y="168">Her levha kesitin bir halkasını kapatır, ortası açık kalır.</text>
+          <text class="dg-t" x="420" y="24">Kesitten bakış</text>
+          <circle cx="510" cy="94" r="50" fill="var(--accent)" fill-opacity="0.35" stroke="var(--ink-2)" stroke-width="1.5"/>
+          <circle cx="510" cy="94" r="35.4" fill="var(--panel)" stroke="var(--ink-2)" stroke-width="1.5"/>
+          <text class="dg-t" x="580" y="74">Kapalı halka: %50</text>
+          <text class="dg-s" x="580" y="94">iç yarıçap = R · √0,5</text>
+          <text class="dg-s" x="580" y="112">≈ 0,707 R</text>
+          <text class="dg-ok" x="580" y="138">Daha azı uygun</text>
+        </svg>
+      </div>
+      <div class="callout info">
+        <b>Raporda zorunlu kanıt</b>
+        <p>Nihai Tasarım Raporu, tankın en çok kapandığı noktadan alınmış, ölçülendirilmiş bir CAD kesit görünümü içermeli: kapalı ve açık alan net gösterilmeli, ölçüler ve en büyük levhanın kapama yüzdesinin hesabı verilmeli. Bu açıklık olmayan belirsiz tasarımlar reddedilir. <span class="ref">TY 2.3.1 · NTR 2.3.5</span></p>
+      </div>
+    </div>
+    <div class="blk">
+      <h3>Yaratıcı fikirler (kurala uygunluğunu sorun)</h3>
+      <div class="prose">
+        <p>Su Roketleri sunumu şu soruları "kalıpların dışında düşünün" diye soruyor: Çalkalanma kabının rijit olması gerekiyor mu, bir torba ya da esnek bir tüp olabilir mi? Tankın içinde yüzey gerilimiyle suyun hareketini yavaşlatacak yüzey alanı artırılabilir mi? Tank döndürülerek merkezcil kuvvetle su sabitlenebilir mi? Suya bir şey eklemek ise yasak. Bu fikirlerin her birinin kesit kuralı, %50 doluluk ve "serbest nesne yok" kurallarıyla nasıl değerlendirileceğini yazılı olarak doğrulayın. <span class="ref">SR</span></p>
+      </div>
+    </div>
+    <div class="cols2">
+      <div class="box ask">
+        <h4>Yarışma ne istiyor?</h4>
+        <ul>
+          <li>Çalkalanma davranışının <b>nasıl tahmin edildiğinin</b> ayrıntıları.</li>
+          <li>Seçilen çözümün gerekçesi.</li>
+          <li>%50 kuralına uyumun ölçülü CAD kesitiyle kanıtı.</li>
+          <li>Finalde: çalkalanma yönetimi tasarım incelemesinin %20'si.</li>
+        </ul>
+      </div>
+      <div class="box todo">
+        <h4>Biz ne yapmalıyız?</h4>
+        <ul>
+          <li>Basit bir model kurun: sarkaç veya yay-kütle eşdeğeri ile doğal frekans ve sönüm. (Simülasyondaki model de böyle.)</li>
+          <li>Ansys (ör. Fluent VOF) ile çalkalanmayı simüle edin; ağ ve sınır koşullarını raporlayın.</li>
+          <li>Basit bir sallama testi yapın: tankı bir kızakta salınıma sokup telefonla yüksek hızlı çekim alın, levhalı ve levhasız sönümü karşılaştırın.</li>
+          <li>Levha geometrisini kapama oranı, ağırlık ve sönüm açısından karşılaştırıp karar matrisine koyun.</li>
+        </ul>
+        <button type="button" class="try" data-try='{"baffle":0}' data-sim="grafik">Simülasyonda bölmesiz tankı dene →</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===================== ALTİMETRE ===================== -->
+  <article class="topic" id="t-altimetre" data-group="Teknik kurallar" data-title="Altimetre ve elektronik" hidden>
+    <header class="t-head">
+      <span class="eyebrow">Teknik kurallar</span>
+      <h2>Altimetre ve elektronik</h2>
+      <p class="lead">İrtifa, organizasyonun finalde verdiği altimetreyle ölçülür. Altimetre önceden verilmez; siz onun için bir yuva tasarlarsınız. Yanlış montaj doğrudan puan kaybettirir.</p>
+    </header>
+    <div class="cols2">
+      <div class="tbl-wrap"><table>
+        <thead><tr><th colspan="2">Estes Altimeter</th></tr></thead>
+        <tbody>
+          <tr><td>Uzunluk</td><td class="num">5,5 cm (2,2 inç)</td></tr>
+          <tr><td>Genişlik</td><td class="num">1,9 cm (0,75 inç)</td></tr>
+          <tr><td>Yükseklik</td><td class="num">1,3 cm (0,5 inç)</td></tr>
+          <tr><td>Ağırlık</td><td class="num">12 g</td></tr>
+          <tr><td>Ölçüm aralığı</td><td class="num">9999 ft (3000 m)</td></tr>
+          <tr><td>Hassasiyet</td><td class="num">3300 ft altında 1 ft</td></tr>
+        </tbody>
+      </table></div>
+      <div class="box plain">
+        <h4>Montaj kuralları</h4>
+        <ul>
+          <li>Yer takıma bırakılmıştır; montaj ve sıfırlama jüri gözetiminde yapılır. <span class="ref">TY 2.4.2–2.4.3</span></li>
+          <li>Roketin içine konursa eşit aralıklı en az üç adet 3 mm kare veya yuvarlak havalandırma deliği gerekir; delikler yüksek/düşük basınç bölgelerinden uzak olmalı. Yetersiz hava akışı düşük irtifa okutur.</li>
+          <li><b>Suya dayanıklı muhafaza zorunlu.</b> <span class="ref">TY 2.4.4</span></li>
+          <li>Statik basıncı ölçen ve darbeden korunan bir yere monte edilir. <span class="ref">TY 2.4.5</span></li>
+          <li>Altimetre değiştirilmez, bantlanmaz; tutucu üreticinin deliklerini kapatmaz ve cihaza yapıştırıcı uygulanmaz. <span class="ref">TY 2.4.6</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout warn">
+      <b>%25 ceza</b>
+      <p>Altimetrenin kaybolması veya zarar görmesinden takım sorumluysa, montaj gereksinimleri karşılanmazsa ya da bu nedenlerle ölçüm hatalı, sıfır veya alınamaz olursa %25 ceza uygulanır. <span class="ref">TY 2.4.7</span></p>
+    </div>
+    <div class="cols2">
+      <div class="box ask">
+        <h4>Yarışma ne istiyor?</h4>
+        <ul>
+          <li>Altimetreyi sabit tutan, darbeden ve sudan koruyan, statik basıncı doğru ölçtüren bir yuva.</li>
+          <li>NTR'de bu muhafazayı anlatan ayrı bir alt bölüm. <span class="ref">NTR 2.3.5</span></li>
+          <li>Finalde zorunlu muhafaza incelemesi. <span class="ref">Tİ 3</span></li>
+        </ul>
+      </div>
+      <div class="box todo">
+        <h4>Biz ne yapmalıyız?</h4>
+        <ul>
+          <li>Altimetrenin ölçülerine göre 3B baskılı, contalı (O-halka) ve aletsiz açılan bir kapsül tasarlayın.</li>
+          <li>Havalandırma deliklerini burun konisinin hemen arkasında, gövdenin düz kısmına eşit aralıkla yerleştirin.</li>
+          <li>Kapsülü su dolu kovaya batırıp sızdırmazlığı test edin; iniş darbesine karşı köpükle sarın (altimetreyi kapatmadan).</li>
+          <li>Aynı ölçülerde bir maket altimetreyle montajı prova edin; yerinde sıfırlama adımlarını kontrol listesine yazın.</li>
+          <li>Kapsülün kütlesini ve konumunu ağırlık merkezi hesabına katın.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===================== BÜTÇE ===================== -->
+  <article class="topic" id="t-butce" data-group="Teknik kurallar" data-title="Malzeme, bütçe ve final atölyesi" hidden>
+    <header class="t-head">
+      <span class="eyebrow">Teknik kurallar</span>
+      <h2>Malzeme, bütçe ve final atölyesi</h2>
+      <p class="lead">Bütçe sınırı yalnızca para değil, finalde ne kullanabileceğinizi de belirler: Malzeme Listesi'nde olmayan hiçbir şey kullanılamaz.</p>
+    </header>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Kural</th><th>Ayrıntı</th><th>Kaynak</th></tr></thead>
+      <tbody>
+        <tr><td>Toplam maliyet</td><td>En fazla 500 €: malzemeler (3B filament dâhil), malzemelerin üretim yerine teslimatı ve sarf malzemeleri. Malzeme listesi ve maliyet dökümü tasarım teslimatının parçası.</td><td class="ref">TY 2.5.1</td></tr>
+        <tr><td>Hazır ticari ürün</td><td>Tasarım, 300 €'dan pahalı hazır ticari (COTS) ürünlere dayanamaz. Maliyet açısından verimli çözümler daha çok puan alır.</td><td class="ref">TY 2.5.2</td></tr>
+        <tr><td>Evden getirilenler</td><td>Önceden sahip olunan malzemeler (kablo bağı, vida, 3B parça) Adil Piyasa Değeri (FMV) veya ilk satın alma fiyatıyla listelenir; ücretsiz sayılmaz.</td><td class="ref">TY 2.5.3</td></tr>
+        <tr><td>%15 pay</td><td>Fiyat dalgalanmaları için 500 € sınırı içinde %15 pay bırakılır.</td><td class="ref">TY 3.3.1</td></tr>
+        <tr><td>Lojistik</td><td>Önceden üretilmiş montajların nakliye veya kayıtlı bagaj maliyeti için bir Lojistik kategorisi zorunlu.</td><td class="ref">TY 3.3.3</td></tr>
+        <tr><td>Aletler</td><td>Standart el aletleri 500 €'ya dâhil değil ama listelenmeli; yalnızca rokette kalan malzemeler sınıra sayılır.</td><td class="ref">ML 2</td></tr>
+        <tr><td>Organizasyonun verdikleri</td><td>Altimetre ve Rectus Type 26 hızlı kaplin.</td><td class="ref">TY 2.5.4</td></tr>
+        <tr><td>Final = montaj aşaması</td><td>Önceden üretilmiş alt montajlar (3B parçalar, kesilmiş gövde parçaları) getirmeniz şiddetle tavsiye edilir. Ev sahibi tesis 3B yazıcı, metal kesici ve standart atölye ekipmanı sunar ama müsaitlik garanti değil.</td><td class="ref">TY 2.5.5</td></tr>
+        <tr><td>Yerinde alet yapımı</td><td>Özel alet (sıcak tel kesici, doğaçlama fikstür) yerinde üretmek yasak; gerekiyorsa Malzeme Listesi'nde beyan edilip önceden üretilir. Aksi hâlde ceza.</td><td class="ref">TY 2.5.7</td></tr>
+        <tr><td>Paylaşım</td><td>Takımlar arası malzeme paylaşımı ve başka kaynaktan malzeme almak yasak.</td><td class="ref">TY 2.5.8</td></tr>
+      </tbody>
+    </table></div>
+    <div class="blk">
+      <h3>Bütçe hesabı nasıl yapılır?</h3>
+      <div class="prose">
+        <p>%15 payın 500 € içinde kalması gerektiğinden, kalemlerin toplamı yaklaşık <b>434 €</b>'yu geçmemeli (434 × 1,15 ≈ 499). Bu bir yorumdur; toplamı ve payı tabloda ayrı satırlarda gösterin. Lojistik ve evden gelen parçaların piyasa değeri bu toplamın içindedir.</p>
+      </div>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Kategori</th><th>Örnek kalemler</th><th>Bütçeye sayılır mı?</th></tr></thead>
+        <tbody>
+          <tr><td>Yapı</td><td>PET şişeler, gövde tüpü, burun konisi, kanatçık malzemesi, yapıştırıcı</td><td>Evet</td></tr>
+          <tr><td>İtki ve fırlatma</td><td>Nozul, contalar, tesisat, valf; rokette kalan parçalar</td><td>Evet</td></tr>
+          <tr><td>Kontrol</td><td>Bölme levhaları; aktif sistemde servo, kontrolcü, sensör, pil</td><td>Evet</td></tr>
+          <tr><td>Kurtarma</td><td>Paraşüt kumaşı, ip, ayırma mekanizması</td><td>Evet</td></tr>
+          <tr><td>3B baskı</td><td>Filament (kullanılan miktar), makine aşınması (FMV)</td><td>Evet</td></tr>
+          <tr><td>Lojistik</td><td>Kargo, kayıtlı bagaj ücretleri, vergiler</td><td>Evet</td></tr>
+          <tr><td>Aletler</td><td>Tornavida, maket bıçağı, havya</td><td>Hayır, ama listelenir</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="cols2">
+      <div class="box ask">
+        <h4>Yarışma ne istiyor?</h4>
+        <ul>
+          <li>Düşük maliyetli, kolay temin edilebilen malzemeler.</li>
+          <li>Finalde montaj ve onarım; karmaşık üretim önceden yapılmış olmalı.</li>
+          <li>Adil bir bütçe rekabeti: her parçanın gerçek değeriyle sayılması.</li>
+        </ul>
+      </div>
+      <div class="box todo">
+        <h4>Biz ne yapmalıyız?</h4>
+        <ul>
+          <li>İlk günden ortak bir bütçe tablosu açın: kalem, adet, birim fiyat, bağlantı, alternatif bağlantılar, kategori.</li>
+          <li>Hangi parçaların önceden üretileceğini ve nasıl taşınacağını (bavul ölçüsü!) planlayın.</li>
+          <li>Finalde yalnızca birleştirme yapacak şekilde montaj sırası ve yedek parça listesi hazırlayın.</li>
+          <li>Ayrıntılar için <a href="#bom" data-goto="bom">Malzeme Listesi</a> konusuna bakın.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===================== KTR ===================== -->
+  <article class="topic" id="t-ktr" data-group="Teslimler" data-title="Kavramsal Tasarım Raporu (KTR)" hidden>
+    <header class="t-head">
+      <span class="eyebrow">Teslimler · 1. aşama</span>
+      <h2>Kavramsal Tasarım Raporu (KTR)</h2>
+      <p class="lead">Bütün takımların teslim ettiği ilk rapor. Amaç, farklı yaklaşımları araştırıp ön bir tasarım konseptine gerekçeli şekilde karar verdiğinizi göstermek. İkinci aşamaya kalan 20 takım bu raporla seçilir.</p>
+    </header>
+    <div class="blk">
+      <h3>Bölümler ve puan ağırlıkları</h3>
+      <div class="wbars" style="--max:35">
+        <div class="wb"><span>Konsept Gerekçelendirmesi</span><span class="wb-bar"><i style="--w:35"></i></span><span class="wb-v">%35</span></div>
+        <div class="wb"><span>Konsept İncelemesi</span><span class="wb-bar"><i style="--w:25"></i></span><span class="wb-v">%25</span></div>
+        <div class="wb"><span>Giriş</span><span class="wb-bar"><i style="--w:10"></i></span><span class="wb-v">%10</span></div>
+        <div class="wb"><span>Gereksinimlerin Belirlenmesi</span><span class="wb-bar"><i style="--w:10"></i></span><span class="wb-v">%10</span></div>
+        <div class="wb"><span>Ön Tasarım Seçimi</span><span class="wb-bar"><i style="--w:10"></i></span><span class="wb-v">%10</span></div>
+        <div class="wb"><span>Proje Organizasyonu</span><span class="wb-bar"><i style="--w:5"></i></span><span class="wb-v">%5</span></div>
+        <div class="wb"><span>Genel Rapor Kalitesi</span><span class="wb-bar"><i style="--w:5"></i></span><span class="wb-v">%5</span></div>
+      </div>
+      <p class="small">Puanın %60'ı iki konsept bölümünden geliyor: farklı fikirler üretmek ve aralarında gerekçeli seçim yapmak. Özet (en fazla 250 kelime) zorunlu ama sayfa sayısına girmez. <span class="ref">KTR 2.3</span></p>
+    </div>
+    <div class="blk">
+      <h3>Her bölümde ne yazmalıyız?</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Bölüm</th><th>Yarışmanın istediği</th><th>Bizim yapacağımız</th></tr></thead>
+        <tbody>
+          <tr><td>Giriş %10</td><td>Çalkalanma literatür taraması; havacılıkta sıvı itici çalkalanması arka planı; ilham alınacak yenilikçi fikirler; akademik makale veya endüstri raporlarından (ör. NASA, ESA) mevcut çözüm örnekleri; proje kapsamı ve hedefleri.</td><td>Genel tanımlarla yetinmeyin; en az birkaç kaynaktan somut çözüm örneği (bölme levhaları, sönümleyiciler) atıflı olarak verin. Başka disiplinlerden fikir bölümü ekleyin.</td></tr>
+          <tr><td>Proje Organizasyonu %5</td><td>Roller ve sorumluluklar; kilometre taşlı Gantt şeması (yüksek çözünürlüklü, Montaj Aşaması kilometre taşlarıyla, tercihen yatay sayfa); gecikmeler için yedek planlar.</td><td>Görev dağılımı tablosu, Gantt ve risk/tampon süreleri.</td></tr>
+          <tr><td>Gereksinimler %10</td><td>Tablo formatında gereksinimler; varsayımlar; zorunlu ve isteğe bağlı girdilerin ayrımı; <b>ölçülebilir sayısal</b> başarı kriterleri (niteliksel ifadeler düşük puan alır).</td><td>Her gereksinime numara verin (ör. GR-01 "Kalkış ağırlığı ≤ 5 kg", kaynak TY 2.1.8) ve nasıl doğrulanacağını yazın.</td></tr>
+          <tr><td>Konsept İncelemesi %25</td><td>Aerodinamik, uçuş performansı, stabilite, kontrol, yapısal bütünlük ve itki açısından incelenmiş, <b>temelden farklı</b> konseptler (3 ya da 4 kanatçık gibi küçük farklar sayılmaz); yenilikçi unsurlar; etiketli eskizler; belirsizlikler; her konsept için ön boyutlandırma hesabı (ör. itki/ağırlık oranı).</td><td>3–4 gerçekten farklı mimari: klasik roket + halka levha, uçak/süzülen konsept, aktif kontrollü, kümeli hazne vb. Her birine kısa hesap ekleyin. Ansys tercih edilen simülasyon yazılımı.</td></tr>
+          <tr><td>Konsept Gerekçelendirmesi %35</td><td>Her konseptin gereksinimlerden nasıl türetildiği; gereksinimleri nerede karşılayıp nerede yetersiz kaldığı; denklemlere ve bilimsel kavramlara atıf; konseptlerin karşılaştırması. Karar matrisi (ör. Pugh) kullanılıyorsa <b>ağırlıkların gerekçesi</b>.</td><td>Karar matrisindeki her kriter ağırlığını uçuş puanı formülüne ve kurallara bağlayın (ör. "kütle %30 çünkü puanı iki yoldan etkiliyor").</td></tr>
+          <tr><td>Ön Tasarım Seçimi %10</td><td>Seçim sürecinden çıkan tercih edilen konsept; diğerlerine göre gerekçesi; iç bölme levhalarının iç tank duvarına göre &lt;%50 kuralını dikkate aldığının açıkça belirtilmesi.</td><td>Seçilen konseptin çizimi, ana boyutları, tahmini kütlesi ve puanı. Nihai tasarım olmak zorunda değil.</td></tr>
+          <tr><td>Genel Kalite %5</td><td>Doğru kaynak gösterimi; izlenebilirlik (kapsam → gereksinim → gerekçe); kendi başına anlaşılan rapor; Ek puanlanmaz; kaynakça.</td><td>Gereksinim numaralarını gerekçe bölümünde tekrar anın; böylece izlenebilirlik görünür olur.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="cols2">
+      <div class="box plain">
+        <h4>Biçim kuralları</h4>
+        <ul>
+          <li>Ana gövde <b>en fazla 15 sayfa</b> (Giriş'ten Sonuçlar'a kadar her şey); aşan her sayfa için tam puanın %3'ü kesilir.</li>
+          <li>Kapak, Özet, İçindekiler, Kaynaklar ve Ekler sayılmaz.</li>
+          <li>A4, 1 inç kenar boşluğu, en az 11 punto Georgia veya Times New Roman, tek satır aralığı.</li>
+          <li>Üçüncü şahıs, iki yana yaslı metin, etiketli grafik/şekil/tablo, APA kaynak gösterme.</li>
+          <li>Takım adı üst bilgide, sayfa numarası üst veya alt bilgide; düz arka plan, filigran yok.</li>
+          <li>İçindekiler; gerekirse Terimler Sözlüğü, Tablolar ve Şekiller Listesi.</li>
+          <li>Kapakta: proje başlığı, takım adı, logo (varsa), üye adları.</li>
+        </ul>
+        <p class="small">Teknik Yönetmelik KTR için "en fazla 2000 kelime" der; kılavuz ise 15 sayfa. Hangisinin geçerli olduğunu sorun.</p>
+      </div>
+      <div class="callout warn">
+        <b>İntihal ve yapay zekâ yasağı</b>
+        <p>İntihal ve yapay zekâ kullanımı yasaktır; tespit edilen bölümlerin puanı silinir, ağır durumlarda diskalifiye edilebilirsiniz. Önceki dönemlere ait bir raporu uygun atıf olmadan kullanmak da intihal sayılır. <span class="ref">KTR 2.2</span></p>
+        <p>Bu rehber dâhil yapay zekâ ile üretilmiş metinleri rapora koymayın. Rehberi konuyu anlamak ve plan yapmak için kullanın; raporu takımınız kendi cümleleriyle, kendi hesaplarıyla yazmalı.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===================== NTR ===================== -->
+  <article class="topic" id="t-ntr" data-group="Teslimler" data-title="Nihai Tasarım Raporu (NTR)" hidden>
+    <header class="t-head">
+      <span class="eyebrow">Teslimler · 2. aşama</span>
+      <h2>Nihai Tasarım Raporu (NTR)</h2>
+      <p class="lead">Seçilen 20 takımın teslim ettiği ana rapor. Mühendislik tasarımının son aşamalarını, yani ayrıntılı tasarımı ve Doğrulama ve Geçerli Kılmayı (V&amp;V) öne çıkarır. Finalistler bu raporun puanıyla belirlenir.</p>
+    </header>
+    <div class="blk">
+      <h3>Bölümler ve puan ağırlıkları</h3>
+      <div class="wbars" style="--max:40">
+        <div class="wb"><span>Ayrıntılı Tasarım</span><span class="wb-bar"><i style="--w:40"></i></span><span class="wb-v">%40</span></div>
+        <div class="wb"><span>Tasarım Doğrulama ve Geçerli Kılma (V&amp;V)</span><span class="wb-bar"><i style="--w:35"></i></span><span class="wb-v">%35</span></div>
+        <div class="wb"><span>Giriş</span><span class="wb-bar"><i style="--w:5"></i></span><span class="wb-v">%5</span></div>
+        <div class="wb"><span>Konsept Tasarım</span><span class="wb-bar"><i style="--w:5"></i></span><span class="wb-v">%5</span></div>
+        <div class="wb"><span>Sonuç</span><span class="wb-bar"><i style="--w:5"></i></span><span class="wb-v">%5</span></div>
+        <div class="wb"><span>Genel Rapor Kalitesi</span><span class="wb-bar"><i style="--w:5"></i></span><span class="wb-v">%5</span></div>
+        <div class="wb"><span>Gereksinimlerin Belirlenmesi</span><span class="wb-bar"><i style="--w:3"></i></span><span class="wb-v">%3</span></div>
+        <div class="wb"><span>Proje Organizasyonu</span><span class="wb-bar"><i style="--w:2"></i></span><span class="wb-v">%2</span></div>
+      </div>
+      <p class="small">Puanın %75'i ayrıntılı tasarım ve V&amp;V'den geliyor. Fiziksel prototip testi isteğe bağlı ve masrafı size ait; ayrıntılı analiz sağlam gerekçe sunuyorsa fiziksel test olmadan da tam puan mümkün. <span class="ref">NTR 1</span></p>
+    </div>
+    <div class="blk">
+      <h3>Ayrıntılı Tasarım (%40) neleri içermeli?</h3>
+      <ul class="steps">
+        <li><span><b>Çalkalanma tahmini ve kontrol mekanizması:</b> davranışın nasıl tahmin edildiği ve kontrolün ortaya çıkan dinamik yüklere karşı nasıl tasarlandığı.</span></li>
+        <li><span><b>Genel yerleşim çizimi:</b> nihai geometri, tercihen 3B CAD modelinden.</span></li>
+        <li><span><b>%50 kuralının kesin geometrik kanıtı:</b> tankın en çok kapandığı noktada ölçülendirilmiş CAD kesiti (iç kesite göre hesap) ve en büyük levhanın kapadığı/açık bıraktığı alan yüzdesi. Bu olmadan tasarım reddedilir.</span></li>
+        <li><span><b>Analiz:</b> analitik veya sayısal analiz, tasarım ödünleşim çalışmaları ve görev performansını en üst düzeye çıkaran optimizasyonlar.</span></li>
+        <li><span><b>Fırlatma ve itki sistemi:</b> iç tesisatın hedef basınca dayanıklı olduğunu gösteren simülasyon veya matematiksel model; Rectus Type 26 entegrasyonunun açık doğrulaması.</span></li>
+        <li><span><b>Simülasyonlar:</b> neden ve nasıl yapıldığı anlaşılarak. Her hesaplamalı simülasyon (CFD, FEA) için ağ boyutu ve kalitesi, sınır koşulları (giriş hızı, basınç), çözücü türü ve yakınsama kriterleri.</span></li>
+        <li><span><b>Üretim:</b> malzeme listesi, bileşen üretimi, montaj sırası, maliyet dökümü.</span></li>
+        <li><span><b>Güvenlik ve işletilebilirlik:</b> verilen risk değerlendirme matrisi şablonuna atıflı güvenlik değerlendirmesi; uçuşun yanında üretim ve montaj riskleri (lehim için koruyucu donanım, basınçlı tankların taşınması).</span></li>
+        <li><span><b>Altimetre muhafazası:</b> darbeye ve suya karşı nasıl koruduğu ve statik basınç portlarına erişimi nasıl sağladığı (sensöre yapıştırıcı olmadan).</span></li>
+      </ul>
+    </div>
+    <div class="cols2">
+      <div class="box plain">
+        <h4>V&amp;V (%35) ve Sonuç (%5)</h4>
+        <ul>
+          <li>Nihai tasarımın gereksinimlere göre değerlendirilmesi.</li>
+          <li>Tasarım tekniklerinin geçerli kılınması (sayısal simülasyonların girdileri, kurulumu ve sonuçlarının doğrulanması).</li>
+          <li>Her gereksinim için simülasyon ve/veya prototip testi içeren test planı.</li>
+          <li>İsteğe bağlı: veri toplama ve işleme, uçuş videoları.</li>
+          <li>V&amp;V bölümü bir <b>Tasarım Uygunluk Matrisi</b> ile biter: her zorunlu gereksinim, ulaşılan değer, gerekçe ve BAŞARILI/BAŞARISIZ durumu.</li>
+          <li>Sonuç bölümünde <b>Nihai Veri Sayfası</b>: ıslak ve kuru kütle; boy, çap, açıklık; ağırlık merkezi ve basınç merkezi konumları; tahmini tepe noktası ve azami hız.</li>
+        </ul>
+      </div>
+      <div class="box plain">
+        <h4>Biçim kuralları</h4>
+        <ul>
+          <li>Ana gövde <b>en fazla 40 sayfa</b> (Giriş'ten Sonuç'a); aşan her sayfa için tam puanın %3'ü kesilir. Ek puanlanmaz.</li>
+          <li>A4, 1 inç, en az 11 punto Georgia veya Times New Roman, tek satır aralığı.</li>
+          <li>Kapakta kelime sayısı da yer alır.</li>
+          <li><b>Birim tutarlılığı:</b> metrik veya İngiliz sisteminden birini seçin; tutarsızlık −5 puan.</li>
+          <li>Tüm grafik, şekil, tablo ve denklemler numaralı; APA kaynak gösterme; üçüncü şahıs; iki yana yaslı.</li>
+          <li>Malzeme Listesi NTR ile birlikte teslim edilir.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cols2">
+      <div class="box ask">
+        <h4>Yarışma ne istiyor?</h4>
+        <ul>
+          <li>KTR'nin üzerine inşa edilmiş, geri bildirimi kullanan bir rapor.</li>
+          <li>Tasarımın neden seçildiğine dair kanıta dayalı destek.</li>
+          <li>Roketin güvenli olduğunun analiz veya testle gösterilmesi; finale geçmek için şart.</li>
+        </ul>
+      </div>
+      <div class="box todo">
+        <h4>Biz ne yapmalıyız?</h4>
+        <ul>
+          <li>KTR geri bildirimini madde madde bir tabloya alın ve her birine NTR'de nasıl yanıt verdiğinizi gösterin.</li>
+          <li>Uygunluk matrisini en baştan şablon olarak açın ve her testten sonra doldurun.</li>
+          <li>Simülasyon sonuçlarını en az bir basit testle (ör. hidrostatik test, sallama testi, kısa uçuş) karşılaştırın.</li>
+          <li>Risk değerlendirmesi şablonunu doldurup raporda atıf yapın.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===================== BOM ===================== -->
+  <article class="topic" id="t-bom" data-group="Teslimler" data-title="Malzeme Listesi (BoM)" hidden>
+    <header class="t-head">
+      <span class="eyebrow">Teslimler · 2. aşama</span>
+      <h2>Malzeme Listesi (BoM)</h2>
+      <p class="lead">Malzeme Listesi, finalin ev sahibine giden bir sipariş talimatıdır. Ev sahibi listede ne yazıyorsa onu almaya çalışır; listede olmayan hiçbir şey (aletler dâhil) finalde kullanılamaz.</p>
+    </header>
+    <div class="cols2">
+      <div class="box ask">
+        <h4>Listede ne olmalı?</h4>
+        <ul>
+          <li>Aracın üretim malzemeleri ve tasarım/üretimde kullanılan sarf malzemeleri.</li>
+          <li>Standart el aletleri (bütçeye sayılmaz ama listelenir).</li>
+          <li>Kalemlerin (aletler dâhil) teknik özellikleri ve İngilizce bir mağaza bağlantısı; maliyete vergi ve kargo dâhil.</li>
+          <li>Bir <b>Lojistik</b> kategorisi: kargo, kayıtlı bagaj vb.</li>
+          <li>Toplam bütçede <b>%15 fiyat payı</b>.</li>
+          <li><b>Tüm</b> 3B parçalar için STL dosyası, teknik özellik ve malzeme. Ev sahibinin yazıcısı kullanılacaksa baskı ayarları (katman yüksekliği, hız, ivme, doluluk, duvar) veya tam .3dp dosyası. Teyit edilen imkân: yalnızca FDM, PLA.</li>
+        </ul>
+        <p class="small">Kaynak: ML 1–2</p>
+      </div>
+      <div class="box todo">
+        <h4>Biz ne yapmalıyız?</h4>
+        <ul>
+          <li>Her kritik kalem için <b>3 alternatif bağlantı</b> verin (doğrudan ürün sayfası).</li>
+          <li>Ölçü/miktar, malzeme, tür ve özellikleri tam yazın; "yapıştırıcı" değil "iki bileşenli epoksi, 25 ml".</li>
+          <li>Yedek parçaları da listeye ekleyin.</li>
+          <li>Bağlantıları teslimden hemen önce ve finale kabul sonrası tekrar kontrol edin.</li>
+          <li>Değişiklikleri finalist kabulünden itibaren 3 hafta içinde yapın.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="blk">
+      <h3>Önceden hazırlanmış parçalar</h3>
+      <div class="cols2">
+        <div class="box plain">
+          <h4>Makul (kabul edilebilir)</h4>
+          <ul><li>PLA/PETG/ABS/reçine 3B parçalar ve montajlar</li><li>Lazerle kesilmiş kontrplak veya plastik</li><li>Önceden programlanmış uçuş bilgisayarı</li><li>Elektronik</li></ul>
+        </div>
+        <div class="box plain">
+          <h4>Makul değil</h4>
+          <ul><li>Karbon fiber (CFRP) monokok roket</li><li>Karmaşık, özellikle sökülemeyen montajlar</li><li>Çok ileri malzemelerden (ör. titanyum) 3B parçalar</li></ul>
+        </div>
+      </div>
+      <p class="small">İlkeler: basit parçalar, makul üretim yöntemi, makul maliyet. Liste yol göstericidir; her parça tek tek onaylanır ve Malzeme Listesi'nde yer almalıdır. <span class="ref">ML 3</span></p>
+    </div>
+    <div class="blk">
+      <h3>Ceza getiren yaygın hatalar</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Hata</th><th>Ne oluyor?</th></tr></thead>
+        <tbody>
+          <tr><td>Bozuk veya genel bağlantı</td><td>404, oturum açma duvarı veya genel ana sayfa: ürün satın alınmaz. Organizatörler parça aramaz.</td></tr>
+          <tr><td>Belirsiz açıklama</td><td>"Yapıştırıcı" yazdınız, stick yapıştırıcı geldi: hata takımındır.</td></tr>
+          <tr><td>Lojistik eksik</td><td>Alt montajların taşıma maliyeti roketin yaşam döngüsü maliyetidir; bütçeye girmeli.</td></tr>
+          <tr><td>Evden gelen parça ücretsiz</td><td>Üniversitede basılan parça, evden kablo bağı: Adil Piyasa Değeri ile listelenmeli.</td></tr>
+          <tr><td>Yasak yerinde alet</td><td>"Yerinde sıcak tel kesici yapacağız" yazmak güvenlik ihlalidir; özel aletler önceden üretilir.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small">Kesintiler jürinin takdiriyle NTR puanına uygulanır; toplam ceza hataların sıklığına ve ciddiyetine göre belirlenir. Organizatör hatasıyla yanlış ürün alınırsa takım cezalandırılmaz. <span class="ref">ML 4</span></p>
+    </div>
+    <div class="blk">
+      <h3>Belgedeki örnek: tek bir kalem</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Kriter</th><th>Örnek A: Uygun değil</th><th>Örnek B: Uygun</th></tr></thead>
+        <tbody>
+          <tr><td>Kalem adı</td><td>Kanatçık gövdesi</td><td>3B baskılı kanatçık gövdesi montajı</td></tr>
+          <tr><td>Tedarikçi</td><td>www.amazon.com (genel ana sayfa)</td><td>Üç ayrı doğrudan filament bağlantısı</td></tr>
+          <tr><td>Özellik</td><td>"Plastik"</td><td>"Prusa PLA, %100 doluluk, 0,2 mm katman"</td></tr>
+          <tr><td>Birim fiyat</td><td class="num">0,00 €</td><td class="num">15,00 €</td></tr>
+          <tr><td>Not</td><td>"Üniversitede basıldı. Yerinde sıcak tel kesici yapacağız."</td><td>"Fiyat filament ve makine aşınmasını (FMV) yansıtır. Önceden kırpıldı. Taşıma 'Lojistik: Kayıtlı Bagaj' kaleminde."</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </article>
+
+  <!-- ===================== FİNAL ===================== -->
+  <article class="topic" id="t-final" data-group="Teslimler" data-title="Final: inceleme ve fırlatma günü" hidden>
+    <header class="t-head">
+      <span class="eyebrow">Teslimler · 3. aşama</span>
+      <h2>Final: tasarım incelemesi ve fırlatma günü</h2>
+      <p class="lead">Finalde önce kurallara uygunluğunuzu gösterirsiniz, sonra roketi birleştirir, tasarımı jüriye savunur ve en fazla üç kez fırlatırsınız.</p>
+    </header>
+    <div class="blk">
+      <h3>Yerinde tasarım incelemesi ve uygunluk kontrolleri</h3>
+      <div class="prose"><p>İlk üç gün içinde, herhangi bir montajdan önce yapılır. Takımlar montaj onayı almak için tasarımlarının güvenliğini ve yönetmeliğe uygunluğunu savunur; tanklar hacim doğrulaması ve iç basınç tesisatı için gösterilir. <span class="ref">TY 2.5.6 · Tİ 1</span></p></div>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Gösterilecek</th><th>Belgedeki öneri</th></tr></thead>
+        <tbody>
+          <tr><td>Ağırlık ≤ 5 kg</td><td>Tartı.</td></tr>
+          <tr><td>İtki suyu ≤ çalkalanan su</td><td>Tankı tamamen doldurup suyu tartın, sonra yarısını boşaltın; benzer işlemle itki suyunu karşılaştırın.</td></tr>
+          <tr><td>Çalkalanma tankı ≥ 500 ml, %50/%50</td><td>Şeffaf olmayan tankta yukarıdaki tartım yöntemi.</td></tr>
+          <tr><td>Kesit kuralı</td><td>NTR ve sunumda CAD modeli ve kesit hesabı.</td></tr>
+          <tr><td>Basınç ≤ 10 bar</td><td>Örneğin bisiklet pompasının basınç göstergesini jüriye göstermek.</td></tr>
+          <tr><td>Rectus Type 26</td><td>Zorunlu erkek bağlantının kullanıldığı doğrulanır.</td></tr>
+          <tr><td>Bölme levhası ≤ %50</td><td>Sunumda en büyük levhanın kesit hesabını gösteren CAD modeli. Jüri uçuştan sonra tankı kesip açabilir; ihlalde diskalifiyeye kadar ağır ceza.</td></tr>
+          <tr><td>Altimetre muhafazası</td><td>Zorunlu inceleme: statik basınç, darbe koruması, bant/yapıştırıcı yok.</td></tr>
+          <tr><td>Fırlatma açısı 85° ± 3°</td><td>Fırlatmadan önce düzeneğin fotoğrafı çekilip açı ölçülür.</td></tr>
+          <tr><td>Ek kontroller</td><td>Tanklardaki sıvı yalnızca su; çalkalanma tankında sünger/emici kaplama ve serbest nesne yok; uçuşta rokete bağlıyken paraşüt açılmadığı kontrol edilir.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small">Kaynak: Tİ 3</p>
+    </div>
+    <div class="blk">
+      <h3>Tasarım incelemesi sunumu: 45 dakika</h3>
+      <div class="prose"><p>30 dakika sunum, 15 dakika panel soru-cevabı. 30. dakikada uyarı yapılır; çok uzayan sunumlar panel tarafından kesilir. Sunum, teknik raporu özetlemeli: çözüme nasıl ulaştığınızı anlatıp neden etkili olduğunu kanıtlamalı. <span class="ref">Tİ 4</span></p></div>
+      <div class="wbars" style="--max:30">
+        <div class="wb"><span>Genel Roket Tasarımı</span><span class="wb-bar"><i style="--w:30"></i></span><span class="wb-v">%30</span></div>
+        <div class="wb"><span>Çalkalanma Yönetimi</span><span class="wb-bar"><i style="--w:20"></i></span><span class="wb-v">%20</span></div>
+        <div class="wb"><span>Üretim, Güvenlik ve Fırlatma Mekanizması</span><span class="wb-bar"><i style="--w:20"></i></span><span class="wb-v">%20</span></div>
+        <div class="wb"><span>Giriş (kapsam, takım, maliyet)</span><span class="wb-bar"><i style="--w:10"></i></span><span class="wb-v">%10</span></div>
+        <div class="wb"><span>Soru-Cevap Kalitesi</span><span class="wb-bar"><i style="--w:10"></i></span><span class="wb-v">%10</span></div>
+        <div class="wb"><span>Çıkarılan Dersler</span><span class="wb-bar"><i style="--w:5"></i></span><span class="wb-v">%5</span></div>
+        <div class="wb"><span>Genel Kalite</span><span class="wb-bar"><i style="--w:5"></i></span><span class="wb-v">%5</span></div>
+      </div>
+    </div>
+    <div class="cols2">
+      <div class="box ask">
+        <h4>Yarışma ne istiyor?</h4>
+        <ul>
+          <li>Kurallara uygunluğu ölçerek ve belgeleyerek kanıtlamanız.</li>
+          <li>Tasarım kararlarının gerekçesini ve gereksinimlere uygunluğun simülasyon/testle nasıl gösterildiğini anlatmanız.</li>
+          <li>Çalkalanmanın nasıl tahmin edilip kontrol edildiğini ve tekniklerin nasıl doğrulandığını göstermeniz.</li>
+          <li>Teknik sorulara yüksek standartta yanıt.</li>
+        </ul>
+      </div>
+      <div class="box todo">
+        <h4>Biz ne yapmalıyız?</h4>
+        <ul>
+          <li>Uygunluk kontrolleri için bir "kanıt dosyası" hazırlayın: tartım fotoğrafları, CAD kesitleri, basınç testi videosu.</li>
+          <li>Sunumu 30 dakikaya göre provayla ayarlayın; her bölüme puan ağırlığı kadar zaman ayırın.</li>
+          <li>Olası soruların listesini çıkarıp takımda soru-cevap provası yapın.</li>
+          <li>Fırlatma günü için yedek parça, alet ve kontrol listesi kutusu hazırlayın.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===================== PARÇALAR ===================== -->
+  <article class="topic" id="t-parcalar" data-group="Mühendislik temelleri" data-title="Roketin parçaları" hidden>
+    <header class="t-head">
+      <span class="eyebrow">Mühendislik temelleri</span>
+      <h2>Roketin parçaları</h2>
+      <p class="lead">Bir su roketi birkaç basit parçadan oluşur, ama her parçanın yarışmada bir kuralı ve bir tasarım kararı vardır. Aşağıda roketin kesitini ve her parçanın ne işe yaradığını İHA'lardan bildiğiniz karşılıklarıyla birlikte görebilirsiniz.</p>
+    </header>
+
+    <figure class="diagram tall" role="img" aria-label="Su roketinin kesit görünümü: burun konisi, altimetre, havalandırma delikleri, çalkalanma tankı, bölme levhaları, ara bağlantı, basınç haznesi, itki suyu, kanatçıklar, nozul ve Rectus kaplin">
+      <svg viewBox="0 0 720 600" xmlns="http://www.w3.org/2000/svg">
+        <!-- legend -->
+        <g>
+          <rect x="24" y="300" width="14" height="14" rx="3" class="pt-air" style="stroke: var(--air); stroke-width: 1" />
+          <text x="46" y="312" class="pt-s">Basınçlı hava</text>
+          <rect x="24" y="326" width="14" height="14" rx="3" class="pt-water" />
+          <text x="46" y="338" class="pt-s">Su</text>
+          <rect x="24" y="352" width="14" height="14" rx="3" class="pt-alt" />
+          <text x="46" y="364" class="pt-s">Elektronik</text>
+          <circle cx="31" cy="385" r="7" class="pt-cg-o" />
+          <path d="M31 385 L38 385 A7 7 0 0 1 31 392 Z M31 385 L24 385 A7 7 0 0 1 31 378 Z" class="pt-cg" />
+          <text x="46" y="390" class="pt-s">AM</text>
+          <circle cx="31" cy="410" r="7" class="pt-cp" />
+          <circle cx="31" cy="410" r="2.4" class="pt-cp-d" />
+          <text x="46" y="415" class="pt-s">BM</text>
+        </g>
+
+        <!-- ground and launcher stub -->
+        <line x1="40" y1="556" x2="360" y2="556" class="pt-ground" />
+        <rect x="160" y="549" width="80" height="7" rx="2" class="pt-stand" />
+        <rect x="196" y="532" width="8" height="18" class="pt-stand" />
+
+        <!-- fins (behind body) -->
+        <path d="M230 445 L230 492 L266 512 L258 466 Z" class="pt-fin" />
+        <path d="M170 445 L170 492 L134 512 L142 466 Z" class="pt-fin" />
+
+        <!-- nose cone with altimeter -->
+        <path d="M170 125 Q170 72 200 40 Q230 72 230 125 Z" class="pt-nose" />
+        <rect x="189" y="88" width="22" height="26" rx="3" class="pt-alt" />
+        <line x1="193" y1="95" x2="207" y2="95" class="pt-lead" />
+        <!-- vent band -->
+        <rect x="170" y="125" width="60" height="10" class="pt-body" />
+        <circle cx="184" cy="130" r="2.4" class="pt-vent" />
+        <circle cx="200" cy="130" r="2.4" class="pt-vent" />
+        <circle cx="216" cy="130" r="2.4" class="pt-vent" />
+
+        <!-- slosh (payload) tank -->
+        <rect x="170" y="135" width="60" height="130" rx="8" class="pt-body" />
+        <path d="M172 202 Q186 196 200 202 T228 202 L228 256 Q228 263 221 263 L179 263 Q172 263 172 256 Z" class="pt-water" />
+        <path d="M172 202 Q186 196 200 202 T228 202" class="pt-wline" />
+        <line x1="172" y1="180" x2="186" y2="180" class="pt-baffle" />
+        <line x1="214" y1="180" x2="228" y2="180" class="pt-baffle" />
+        <line x1="172" y1="228" x2="186" y2="228" class="pt-baffle" />
+        <line x1="214" y1="228" x2="228" y2="228" class="pt-baffle" />
+        <!-- 50 % fill mark -->
+        <line x1="156" y1="200" x2="168" y2="200" class="pt-zone" style="stroke: var(--water)" />
+        <text x="150" y="204" class="pt-m" text-anchor="end">%50</text>
+
+        <!-- coupler -->
+        <rect x="167" y="265" width="66" height="12" rx="3" class="pt-coupler" />
+
+        <!-- pressure chamber -->
+        <rect x="170" y="277" width="60" height="213" rx="10" class="pt-body" />
+        <rect x="172" y="279" width="56" height="148" rx="8" class="pt-air" />
+        <path d="M172 427 L228 427 L228 480 Q228 488 220 488 L180 488 Q172 488 172 480 Z" class="pt-water" />
+        <line x1="172" y1="427" x2="228" y2="427" class="pt-wline" />
+        <path d="M184 490 L216 490 L212 500 L188 500 Z" class="pt-body" />
+        <!-- nozzle and Rectus coupling -->
+        <path d="M188 500 L212 500 L208 518 L192 518 Z" class="pt-metal" />
+        <rect x="192" y="518" width="16" height="14" rx="2" class="pt-coupler" />
+        <line x1="192" y1="525" x2="208" y2="525" class="pt-lead" />
+
+        <!-- CG and CP -->
+        <circle cx="200" cy="306" r="9" class="pt-cg-o" />
+        <path d="M200 306 L209 306 A9 9 0 0 1 200 315 Z M200 306 L191 306 A9 9 0 0 1 200 297 Z" class="pt-cg" />
+        <circle cx="200" cy="379" r="9" class="pt-cp" />
+        <circle cx="200" cy="379" r="3" class="pt-cp-d" />
+
+        <!-- leaders + labels -->
+        <g>
+          <polyline points="214,70 400,39 412,39" class="pt-lead" /><circle cx="214" cy="70" r="2.6" class="pt-dot" />
+          <text x="420" y="44" class="pt-t">Burun konisi</text>
+          <text x="420" y="60" class="pt-s">Havayı yarar, inişte darbeyi karşılar</text>
+
+          <polyline points="211,101 400,79 412,79" class="pt-lead" /><circle cx="211" cy="101" r="2.6" class="pt-dot" />
+          <text x="420" y="84" class="pt-t">Altimetre yuvası</text>
+          <text x="420" y="100" class="pt-s">Estes altimetre, suya dayanıklı muhafaza</text>
+
+          <polyline points="216,130 400,119 412,119" class="pt-lead" /><circle cx="216" cy="130" r="2.6" class="pt-dot" />
+          <text x="420" y="124" class="pt-t">Havalandırma delikleri</text>
+          <text x="420" y="140" class="pt-s">En az 3 × 3 mm, statik basınç için</text>
+
+          <polyline points="230,150 400,159 412,159" class="pt-lead" /><circle cx="230" cy="150" r="2.6" class="pt-dot" />
+          <text x="420" y="164" class="pt-t">Çalkalanma tankı</text>
+          <text x="420" y="180" class="pt-s">Basınçsız faydalı yük tankı, ≥ 500 ml su</text>
+
+          <polyline points="226,180 400,199 412,199" class="pt-lead" /><circle cx="226" cy="180" r="2.6" class="pt-dot" />
+          <text x="420" y="204" class="pt-t">Bölme levhaları</text>
+          <text x="420" y="220" class="pt-s">Her biri iç kesitin en fazla %50'si</text>
+
+          <polyline points="220,240 400,239 412,239" class="pt-lead" /><circle cx="220" cy="240" r="2.6" class="pt-dot" />
+          <text x="420" y="244" class="pt-t">Çalkalanan su (%50 dolu)</text>
+          <text x="420" y="260" class="pt-s">Puanı çarpan faydalı yük</text>
+
+          <polyline points="233,271 400,279 412,279" class="pt-lead" /><circle cx="233" cy="271" r="2.6" class="pt-dot" />
+          <text x="420" y="284" class="pt-t">Ara bağlantı</text>
+          <text x="420" y="300" class="pt-s">İki tankı hizalı ve sağlam birleştirir</text>
+
+          <polyline points="209,306 400,319 412,319" class="pt-lead" />
+          <text x="420" y="324" class="pt-t">Ağırlık merkezi (AM)</text>
+          <text x="420" y="340" class="pt-s">BM'nin önünde (buruna yakın) olmalı</text>
+
+          <polyline points="228,345 400,359 412,359" class="pt-lead" /><circle cx="228" cy="345" r="2.6" class="pt-dot" />
+          <text x="420" y="364" class="pt-t">Basınç haznesi (basınçlı hava)</text>
+          <text x="420" y="380" class="pt-s">Roketin "motoru", en fazla 10 bar</text>
+
+          <polyline points="209,379 400,399 412,399" class="pt-lead" />
+          <text x="420" y="404" class="pt-t">Basınç merkezi (BM)</text>
+          <text x="420" y="420" class="pt-s">Aerodinamik kuvvetlerin etki noktası</text>
+
+          <polyline points="226,437 400,439 412,439" class="pt-lead" /><circle cx="226" cy="437" r="2.6" class="pt-dot" />
+          <text x="420" y="444" class="pt-t">İtki suyu</text>
+          <text x="420" y="460" class="pt-s">Kütlesi çalkalanan sudan fazla olamaz</text>
+
+          <polyline points="262,494 400,479 412,479" class="pt-lead" /><circle cx="262" cy="494" r="2.6" class="pt-dot" />
+          <text x="420" y="484" class="pt-t">Kanatçıklar</text>
+          <text x="420" y="500" class="pt-s">Roketi rüzgâr gülü gibi düz tutar</text>
+
+          <polyline points="210,511 400,519 412,519" class="pt-lead" /><circle cx="210" cy="511" r="2.6" class="pt-dot" />
+          <text x="420" y="524" class="pt-t">Nozul</text>
+          <text x="420" y="540" class="pt-s">Suyun çıktığı ağız, tipik 9–22 mm</text>
+
+          <polyline points="208,527 400,559 412,559" class="pt-lead" /><circle cx="208" cy="527" r="2.6" class="pt-dot" />
+          <text x="420" y="564" class="pt-t">Rectus Type 26 kaplin</text>
+          <text x="420" y="580" class="pt-s">Zorunlu basınçlandırma bağlantısı (erkek uç)</text>
+        </g>
+      </svg>
+      <figcaption><span class="dg-hint">Etiketleri görmek için yana kaydırın. </span>Rampadaki roket, kesit görünüm. Ölçekli değildir; parçaların yerleşimi örnek İKARUS-1 düzenine göredir.</figcaption>
+    </figure>
+
+    <div class="blk">
+      <h3 class="grp-h">1 · İtki sistemi <small>roketi uçuran kısım</small></h3>
+      <div class="pcards">
+        <div class="pcard" style="--chip: var(--air)">
+          <h4><i></i>Basınç haznesi</h4>
+          <p>Roketin hem <b>motoru</b> hem de <b>yakıt deposu</b>. İçinde su ve sıkıştırılmış hava bulunur; hava suyu nozuldan dışarı iterek itki üretir. Genellikle gazlı içecek PET şişesi ya da birleştirilmiş PET şişelerden yapılır.</p>
+          <dl class="pk">
+            <dt>Kural</dt><dd>En fazla 10 bar (Tİ 3; TY 2.2.1 "10 atmosferden düşük" der). PET şişe yaklaşık 9 bar'da kalıcı şekil değiştirmeye başlar, 13 bar civarında patlar; bu yüzden hidrostatik test şart. PVC boru kullanmayın: keskin parçalara ayrılarak patlar.</dd>
+            <dt class="uav">İHA'da</dt><dd>Batarya: uçuş enerjisinin tamamı burada depolanır.</dd>
+          </dl>
+        </div>
+        <div class="pcard" style="--chip: var(--air)">
+          <h4><i></i>Basınçlı hava</h4>
+          <p>Asıl enerji kaynağı. Pompaladıkça hava sıkışır ve enerji depolar. Su dışarı çıktıkça hava genişler ve basıncı düşer (P = P₀ · (V₀/V)<sup>1,4</sup>); itki de bu yüzden fırlatma boyunca azalır.</p>
+          <dl class="pk">
+            <dt>Kural</dt><dd>Yalnızca hava. Helyum gibi gazlar, itici gaz, motor ve pervane yasak (TY 2.2.3).</dd>
+            <dt class="uav">İHA'da</dt><dd>Bataryanın şarj seviyesi: basınç ne kadar yüksekse o kadar enerji.</dd>
+          </dl>
+        </div>
+        <div class="pcard" style="--chip: var(--water)">
+          <h4><i></i>İtki suyu</h4>
+          <p>Dışarı atılan kütle. Hava çok hafif olduğu için tek başına az itki verir; su ağır olduğu için büyük momentum taşır. Haznenin yaklaşık %30–40'ı su olur. Çok az su: itki erken biter. Çok fazla su: roket ağırlaşır ve hava hacmi azalır.</p>
+          <dl class="pk">
+            <dt>Kural</dt><dd>İtki suyunun kütlesi çalkalanan suyun kütlesinden fazla olamaz (TY 2.1.7). Hava/su oranı serbest (TY 2.2.4).</dd>
+            <dt class="uav">İHA'da</dt><dd>Pervanenin geriye ittiği hava kütlesi.</dd>
+          </dl>
+        </div>
+        <div class="pcard" style="--chip: var(--tube)">
+          <h4><i></i>Nozul</h4>
+          <p>Suyun dışarı çıktığı ağız. Büyük nozul (22 mm, şişe ağzının tam çapı) kısa ve çok güçlü bir itki verir; küçük nozul (9 mm Gardena) daha zayıf ama daha uzun bir itki verir. Düz geçişli olmalı, ıraksak (genişleyen) olmamalı.</p>
+          <dl class="pk">
+            <dt>Seçim</dt><dd>Ağır roketimiz için yüksek itki/ağırlık önemli olduğundan büyük nozul genellikle avantajlı.</dd>
+            <dt class="uav">İHA'da</dt><dd>Pervane çapı ve hatve seçimi gibi: çekiş ile verim arasında bir ödünleşim.</dd>
+          </dl>
+        </div>
+        <div class="pcard" style="--chip: var(--tube)">
+          <h4><i></i>Rectus Type 26 kaplin</h4>
+          <p>Basınçlandırma arayüzü. Organizasyonun ortak kompresör hortumu bu standart hızlı kaplinin erkek ucuna takılır; hava bu yoldan hazneye girer.</p>
+          <dl class="pk">
+            <dt>Kural</dt><dd>Erkek Rectus Type 26 zorunlu. İç tesisatın basınca dayanıklılığı en az bir simülasyonla gösterilir ve fırlatmadan önce basınç testi yapılır (TY 2.2.6).</dd>
+            <dt class="uav">İHA'da</dt><dd>Şarj soketi: standart olmak zorunda, çünkü "şarj cihazı" organizasyonun.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="blk">
+      <h3 class="grp-h">2 · Yük ve çalkalanma <small>puanı belirleyen kısım</small></h3>
+      <div class="pcards">
+        <div class="pcard" style="--chip: var(--water)">
+          <h4><i></i>Çalkalanma tankı</h4>
+          <p>Taşıdığınız <b>faydalı yük</b>. Puan formülündeki yük kütlesi budur: uçuş puanı yük/kalkış ağırlığı oranıyla çarpılır. Tank basınçsızdır ve içindeki su uçuş boyunca serbestçe çalkalanır.</p>
+          <dl class="pk">
+            <dt>Kural</dt><dd>En az 500 ml su; hacimce %50 su, %50 hava ve %50 çizgisi jürinin görebileceği şekilde işaretli. Tankın en dar kesiti en geniş kesitinin %50'sinden küçük olamaz, her eksende ayrı ayrı (TY 2.1.5).</dd>
+            <dt class="uav">İHA'da</dt><dd>Kargo bölmesi, ama yük sabitlenemeyen bir sıvı.</dd>
+          </dl>
+        </div>
+        <div class="pcard" style="--chip: var(--ink)">
+          <h4><i></i>Bölme levhaları</h4>
+          <p>Tankın içindeki suyun hareketini frenleyen levhalar (baffle). Suyu tamamen durdurmazlar; dalganın enerjisini sönümler ve kütlenin bir taraftan diğerine savrulmasını yavaşlatırlar.</p>
+          <dl class="pk">
+            <dt>Kural</dt><dd>Hiçbir levha tankın iç kesitinin %50'sinden fazlasını kaplayamaz. Sünger veya emici kaplama ve serbest nesne yasak. Jüri uçuştan sonra tankı kesip açabilir; ihlalde diskalifiyeye kadar ceza (TY 2.3.1, 2.3.4; Tİ 3).</dd>
+            <dt class="uav">İHA'da</dt><dd>Büyük uçakların kanat yakıt tanklarındaki çalkalanma önleyici bölmeler.</dd>
+          </dl>
+        </div>
+        <div class="pcard" style="--chip: var(--tube)">
+          <h4><i></i>Ara bağlantı</h4>
+          <p>Çalkalanma tankını basınç haznesine bağlayan parça. Fırlatmadaki yaklaşık 21 g'lik ivmeyi taşıyacak kadar sağlam, iki tankı aynı eksende tutacak kadar hassas ve olabildiğince hafif olmalı.</p>
+          <dl class="pk">
+            <dt>Kural</dt><dd>Tanklar gövdeye kalıcı olarak takılmadan önce hacim doğrulaması için jüriye gösterilir; jüri tankları mühürleyebilir (TY 2.3.3).</dd>
+            <dt class="uav">İHA'da</dt><dd>Gövde bölümlerini birleştiren bağlantı halkaları.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="blk">
+      <h3 class="grp-h">3 · Gövde ve aerodinamik <small>roketi düz ve az sürtünmeyle uçuran kısım</small></h3>
+      <div class="pcards">
+        <div class="pcard" style="--chip: #cfe6f7">
+          <h4><i></i>Burun konisi</h4>
+          <p>Havayı yararak sürüklemeyi azaltır. Ağırlığı ağırlık merkezini öne çektiği için kararlılığa da katkı verir. İnişte ilk çarpan yer olduğu için içine köpük gibi darbe sönümleyici malzeme konur; altimetre de genellikle burada durur.</p>
+          <dl class="pk">
+            <dt>Tasarım</dt><dd>Yuvarlak veya ogive form yeterli; sivri olması bu hızlarda (≈ 15 m/s) büyük fark yaratmaz.</dd>
+            <dt class="uav">İHA'da</dt><dd>Gövde burnu (nose cone), çoğu zaman sensörlerin de yeri.</dd>
+          </dl>
+        </div>
+        <div class="pcard" style="--chip: var(--c-fin)">
+          <h4><i></i>Kanatçıklar</h4>
+          <p>Kuyruktaki sabit yüzeyler. Basınç merkezini geriye çekerek roketi bir rüzgâr gülü gibi uçuş yönünde tutarlar. Genellikle 3 veya 4 adettir ve tam hizalı olmalıdır; eğri bir kanatçık roketi döndürür.</p>
+          <dl class="pk">
+            <dt>Seçim</dt><dd>Büyük kanatçık: daha kararlı, ama daha çok sürükleme ve rüzgâra daha çok dönme. Küçük kanatçık: daha az sürükleme, ama kararsızlık riski. Hareketli (aktif) yüzeyler serbest, ancak malzeme listesinde yer almalı.</dd>
+            <dt class="uav">İHA'da</dt><dd>Dikey ve yatay kuyruk (stabilizer).</dd>
+          </dl>
+        </div>
+        <div class="pcard" style="--chip: var(--accent)">
+          <h4><i></i>Kanat (isteğe bağlı)</h4>
+          <p>Tepe noktasından sonra süzülerek uçuş süresini ve yatay mesafeyi uzatmak için eklenebilir. Sabit ya da tepe noktasında açılan tipte olabilir; simülasyonda ikisini de deneyebilirsiniz.</p>
+          <dl class="pk">
+            <dt>Kural</dt><dd>Kanat açıklığı en fazla 2,25 m, roket boyu en fazla 1,5 m (TY 2.1.1–2.1.2).</dd>
+            <dt class="uav">İHA'da</dt><dd>Ana kanat: aynı aerodinamik, sadece çok daha kısa bir süzülme.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="blk">
+      <h3 class="grp-h">4 · Denge <small>AM ve BM</small></h3>
+      <div class="pcards">
+        <div class="pcard" style="--chip: var(--ink)">
+          <h4><i></i>Ağırlık merkezi (AM)</h4>
+          <p>Roketin tüm ağırlığının toplandığı kabul edilen nokta. Su roketinde uçuş boyunca kayar: itki suyu kuyruktan dışarı çıktıkça AM öne gelir. Çalkalanan su da yana savruldukça AM'yi oynatır.</p>
+          <dl class="pk">
+            <dt>Ölçüm</dt><dd>Dolu roketi bir ipe asarak veya bıçak sırtında dengeleyerek bulunur.</dd>
+            <dt class="uav">İHA'da</dt><dd>CG: aynı kavram, aynı ölçüm yöntemi.</dd>
+          </dl>
+        </div>
+        <div class="pcard" style="--chip: var(--accent)">
+          <h4><i></i>Basınç merkezi (BM)</h4>
+          <p>Hava kuvvetlerinin bileşkesinin etki ettiği nokta. Kanatçıklar BM'yi geriye çeker. Roket düz uçmak için AM'nin BM'nin <b>önünde</b> olmasına ihtiyaç duyar; aradaki mesafenin gövde çapına oranına kararlılık payı denir.</p>
+          <dl class="pk">
+            <dt>Hedef</dt><dd>1–2 kalibre. Az olursa roket takla atar, çok olursa rüzgâra doğru aşırı döner.</dd>
+            <dt class="uav">İHA'da</dt><dd>Nötr nokta ve statik marj: AM'nin nötr noktanın önünde olması gibi.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="blk">
+      <h3 class="grp-h">5 · Ölçüm <small>irtifayı puana çeviren kısım</small></h3>
+      <div class="pcards">
+        <div class="pcard" style="--chip: var(--c-prop)">
+          <h4><i></i>Altimetre</h4>
+          <p>Organizasyonun verdiği Estes altimetre (5,5 × 1,9 × 1,3 cm, 12 g) ulaşılan en yüksek irtifayı ölçer; bu değer doğrudan puan formülüne girer. Takılması ve sıfırlanması jüri gözetiminde yapılır.</p>
+          <dl class="pk">
+            <dt>Kural</dt><dd>Suya dayanıklı muhafaza zorunlu. Altimetreye bant veya yapıştırıcı uygulanamaz, kendi delikleri kapatılamaz. Takımın sorumlu olduğu kayıp, hasar ya da okunamayan ölçümde %25 ceza (TY 2.4.4–2.4.7).</dd>
+            <dt class="uav">İHA'da</dt><dd>Uçuş kontrolcüsündeki barometrik basınç sensörü.</dd>
+          </dl>
+        </div>
+        <div class="pcard" style="--chip: var(--ink-2)">
+          <h4><i></i>Havalandırma delikleri</h4>
+          <p>Altimetre irtifayı hava basıncından hesaplar. Kapalı bir bölmede dış basıncı göremez; bu delikler dış havanın basıncını altimetreye ulaştırır.</p>
+          <dl class="pk">
+            <dt>Kural</dt><dd>Eşit aralıklı en az üç adet 3 mm delik. Yüksek veya düşük basınç bölgelerinden (burun ucu, kanatçık arkası) kaçının; hava yetersizse altimetre daha düşük irtifa gösterir (TY 2.4.3).</dd>
+            <dt class="uav">İHA'da</dt><dd>Pitot-statik sistemin statik portu.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="blk">
+      <h3 class="grp-h">6 · Yer ekipmanı <small>roketin değil ama sistemin parçası</small></h3>
+      <div class="cols3">
+        <div class="box plain"><h4>Fırlatma rampası</h4><p>Roketi 85° ± 3° açıyla tutar; kılavuz ray (simülasyonda 1 m) roket yeterli hıza ulaşana kadar yön verir. Açı jüri tarafından ölçülür (TY 2.1.3).</p></div>
+        <div class="box plain"><h4>Kompresör</h4><p>Organizasyon ortak bir kompresör arayüzü sağlar ve hortum ucu Rectus 26 kaplinize takılır (TY 2.2.6). Kompresörün kendisini kimin getireceğini Soru-Cevap'ta netleştirin.</p></div>
+        <div class="box plain"><h4>Tetik ve boşaltma valfi</h4><p>Roket en az 5 m uzaktan fırlatılabilmeli; basınç da aynı mesafeden güvenle boşaltılabilmeli (TY 2.2.2, 2.2.5).</p></div>
+      </div>
+    </div>
+
+    <div class="cols2">
+      <div class="box ask">
+        <h4>Yarışma ne istiyor?</h4>
+        <ul>
+          <li>Her parçanın kurala uygunluğunu ölçüp belgelemeniz: hacim, kütle, basınç, kesit alanı.</li>
+          <li>Parça seçimlerinizi gerekçelendirmeniz (Tasarım İncelemesi'nde "Genel Roket Tasarımı", %30).</li>
+          <li>Malzeme listesinde her parçanın maliyetinin yer alması.</li>
+        </ul>
+      </div>
+      <div class="box todo">
+        <h4>Biz ne yapmalıyız?</h4>
+        <ul>
+          <li>Her parça için bir "kural + kanıt" satırı tutun; NTR'deki uygunluk matrisi doğrudan buradan çıkar.</li>
+          <li>Parçaların kütlesini tek tek tartıp simülasyondaki boş kütleyi gerçek değerle güncelleyin.</li>
+          <li>AM ve BM'yi hem kalkış hem itki sonu için hesaplayın.</li>
+        </ul>
+        <button type="button" class="try" data-sim="roket">Simülasyonda roketin yapısını incele →</button>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ===================== FİZİK ===================== -->
+  <article class="topic" id="t-fizik" data-group="Mühendislik temelleri" data-title="Su roketi nasıl uçar?" hidden>
+    <header class="t-head">
+      <span class="eyebrow">Mühendislik temelleri</span>
+      <h2>Su roketi nasıl uçar?</h2>
+      <p class="lead">Basınçlı hava, suyu nozuldan yüksek hızla dışarı iter; tepki kuvveti roketi yukarı taşır. Bütün itki saniyenin onda biri ile birkaç onda biri arasında biter.</p>
+    </header>
+    <div class="blk">
+      <h3>Üç evre</h3>
+      <div class="cols3">
+        <div class="box plain"><h4>1 · Su evresi</h4><p>Hava genleşip suyu iter. Suyun çıkış hızı v ≈ √(2ΔP/ρ): 8 bar'da yaklaşık 40 m/s. İtki ≈ 2 · C<sub>d</sub>² · A<sub>nozul</sub> · ΔP; 22 mm nozul ve 8 bar ile yaklaşık 560 N.</p></div>
+        <div class="box plain"><h4>2 · Hava evresi</h4><p>Su bittiğinde haznede kalan basınçlı hava dışarı akar ve kısa, daha zayıf bir ek itki verir. Hava çok hafif olduğu için bu evre daha az katkı sağlar.</p></div>
+        <div class="box plain"><h4>3 · Süzülme</h4><p>İtki biter; roket hızıyla tırmanır, tepe noktasından sonra düşer. Sürükleme ve kararlılık bu evrede belirleyicidir; çalkalanma da en çok burada etkilidir.</p></div>
+      </div>
+    </div>
+    <div class="blk">
+      <h3>Pratik kurallar (Su Roketleri sunumu)</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Konu</th><th>Öneri</th></tr></thead>
+        <tbody>
+          <tr><td>Ne kadar su?</td><td>Genel kural: hazne ⅓ su, ⅔ hava. Optimum rokete göre değişir; bu yarışmada itki suyu çalkalanan sudan fazla olamaz.</td></tr>
+          <tr><td>İtki/ağırlık</td><td>Yaklaşık 5:1 hedefleyin; 3:1'e kadar düşük de mümkün.</td></tr>
+          <tr><td>Nozul</td><td>Nozul boyutu iç çaptır; her zaman düz geçişli, ıraksak değil. Büyük nozul: yüksek itki, kısa yanma. Küçük nozul: düşük itki, uzun yanma. Elde edilen irtifa benzerdir. Nozul tipini erken seçin.</td></tr>
+          <tr><td>Yaygın nozullar</td><td>Tam çaplı 22 mm · Maxiflow 16 mm · Gardena 9 mm.</td></tr>
+          <tr><td>Fırlatma tüpü</td><td>Fazla basınç veya su kullanmadan roketi hızlandırır; irtifayı %10–15 artırabilir. Mümkün olduğunca uzun ve nozul çapından biraz dar olmalı.</td></tr>
+          <tr><td>Tasarım süreci</td><td>Yinelemelidir; dayanım ile ağırlık arasında hep ödünleşim vardır. Hedef: büyük toplam impuls, düşük ağırlık ve sürükleme, aerodinamik kararlılık. Parametreleri çevrimiçi simülatörlerde deneyin.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="blk">
+      <h3>Büyük ve küçük nozul karşılaştırması</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>İvme</th><th>Avantajlar</th><th>Dezavantajlar</th></tr></thead>
+        <tbody>
+          <tr><td>Yüksek (büyük nozul)</td><td>Kararlı hıza erken ulaşır, uzun kılavuz ray gerekmez. Genellikle daha yükseğe çıkar.</td><td>Bileşenlere daha çok gerilme biner, her şey ivmeye karşı sabitlenmeli. Sürükleme hızın karesiyle arttığı için aerodinamik önem kazanır.</td></tr>
+          <tr><td>Düşük (küçük nozul)</td><td>Fırlatmada bileşenlere daha az gerilme. Çok kademeli roketlerin üst kademeleri için uygun.</td><td>Genellikle kılavuz ray gerekir; ilk anlarda yan rüzgâra daha hassas; yüksek ivmeli rokete göre daha alçak uçabilir.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="cols2">
+      <div class="box todo">
+        <h4>Bizim için anlamı</h4>
+        <ul>
+          <li>Ağır bir roket (çok çalkalanan su) taşıdığımız için yüksek itki/ağırlık önemli; büyük nozul genelde avantajlı.</li>
+          <li>İtki suyu sınırı (≤ çalkalanan su) optimum su oranının hemen yanında devreye giriyor; simülasyonun "Tasarım taraması" sekmesinde görebilirsiniz.</li>
+        </ul>
+      </div>
+      <div class="box plain">
+        <h4>Faydalı araçlar</h4>
+        <ul>
+          <li><a href="https://openrocket.info/" target="_blank" rel="noopener">OpenRocket</a>: kararlılık ve uçuş simülasyonu</li>
+          <li><a href="https://waterrocketsimulator.github.io/" target="_blank" rel="noopener">Wojtek Jackiewicz'in su roketi simülatörü</a></li>
+          <li><a href="http://www.aircommandrockets.com/sim/simulator.htm" target="_blank" rel="noopener">Dean Wheeler'ın simülatörü</a></li>
+          <li><a href="http://www.aircommandrockets.com/water.htm" target="_blank" rel="noopener">Ne kadar su kullanılmalı (Air Command)</a></li>
+        </ul>
+      </div>
+    </div>
+    <button type="button" class="try" data-sim="grafik">Simülasyonda itki eğrisini incele →</button>
+  </article>
+
+  <!-- ===================== FIRLATMA NASIL YAPILIR ===================== -->
+  <article class="topic" id="t-atis" data-group="Mühendislik temelleri" data-title="Fırlatma nasıl yapılır?" hidden>
+    <header class="t-head">
+      <span class="eyebrow">Mühendislik temelleri</span>
+      <h2>Fırlatma nasıl yapılır?</h2>
+      <p class="lead">Fırlatma üç işten oluşur: roketi rampadaki fırlatıcıya kilitlemek, güvenli mesafeden hava basmak ve bir ipi çekerek kilidi açmak. Mekanizma basit; asıl iş doğru sıralama ve güvenlik.</p>
+    </header>
+
+    <div class="blk">
+      <h3>Düzenek: neyin nereye bağlandığı</h3>
+      <figure class="diagram tall" role="img" aria-label="Fırlatma düzeneği: 85 derecelik rampadaki roket, fırlatıcı başlığı, Rectus 26 bağlantısı, yerde uzanan hortum ve tetik ipi, 5 metrelik güvenli mesafe çizgisi, tetikçi, manometre ve valfler, kompresör">
+        <svg viewBox="0 0 760 345" xmlns="http://www.w3.org/2000/svg">
+          <!-- ground -->
+          <line x1="20" y1="310" x2="745" y2="310" class="pt-ground" />
+          <rect x="108" y="302" width="94" height="8" rx="2" class="pt-stand" />
+
+          <!-- vertical reference and angle -->
+          <line x1="101.9" y1="297.9" x2="101.9" y2="60" class="pt-lead" stroke-dasharray="4 5" />
+          <path d="M101.9 67.9 A230 230 0 0 1 121.95 68.77" class="pt-ang" />
+          <text x="111" y="60" class="pt-ang-t" text-anchor="middle">5°</text>
+
+          <!-- rocket on launcher, tilted 5° -->
+          <g transform="translate(150 276) rotate(5)">
+            <line x1="-46" y1="26" x2="-46" y2="-236" class="pt-rail" />
+            <rect x="-46" y="-104" width="28" height="5" class="pt-stand" />
+            <rect x="-46" y="-178" width="28" height="5" class="pt-stand" />
+            <path d="M18 -60 L18 -26 L38 -14 L34 -42 Z" class="pt-fin" />
+            <path d="M-18 -60 L-18 -26 L-38 -14 L-34 -42 Z" class="pt-fin" />
+            <rect x="-18" y="-130" width="36" height="106" rx="8" class="pt-body" />
+            <rect x="-16" y="-128" width="32" height="70" rx="6" class="pt-air" />
+            <path d="M-16 -58 L16 -58 L16 -26 L-16 -26 Z" class="pt-water" />
+            <path d="M-18 -24 Q-18 -14 -8 -10 L8 -10 Q18 -14 18 -24 Z" class="pt-body" />
+            <path d="M-16 -26 L16 -26 Q16 -16 7 -12 L-7 -12 Q-16 -16 -16 -26 Z" class="pt-water" />
+            <path d="M-8 -10 L8 -10 L6 0 L-6 0 Z" class="pt-metal" />
+            <rect x="-19" y="-138" width="38" height="8" rx="2" class="pt-coupler" />
+            <rect x="-18" y="-196" width="36" height="58" rx="6" class="pt-body" />
+            <rect x="-16" y="-167" width="32" height="27" class="pt-water" />
+            <path d="M-18 -196 Q-18 -226 0 -244 Q18 -226 18 -196 Z" class="pt-nose" />
+            <rect x="-14" y="0" width="28" height="16" rx="2" class="pt-dev" />
+            <rect x="-13" y="-6" width="26" height="8" rx="2" class="pt-coupler" />
+            <rect x="-5" y="16" width="10" height="10" class="pt-stand" />
+          </g>
+
+          <!-- Rectus coupling + air hose to control point -->
+          <path d="M170 288 Q178 305 194 305 L590 305" class="pt-hose" />
+          <rect x="163" y="282" width="14" height="9" rx="2" class="pt-coupler" />
+          <!-- trigger cord -->
+          <path d="M137 273 L124 300 L462 300 Q470 292 468 263" class="pt-cord" />
+
+          <!-- labels near the launcher -->
+          <polyline points="96,160 113,163" class="pt-lead" />
+          <text x="92" y="150" class="pt-l" text-anchor="end">Rampa</text>
+          <text x="92" y="165" class="pt-l" text-anchor="end">ve ray</text>
+          <text x="92" y="181" class="pt-s" text-anchor="end">85° ± 3°</text>
+          <polyline points="165,278 204,270 210,270" class="pt-lead" />
+          <text x="214" y="262" class="pt-l">Fırlatıcı başlığı</text>
+          <text x="214" y="277" class="pt-s">conta + kablo bağı kilidi</text>
+          <text x="186" y="294" class="pt-l">Rectus 26</text>
+          <text x="160" y="331" class="pt-s">Hortum ve tetik ipi yerde uzanır</text>
+
+          <!-- safety distance -->
+          <line x1="440" y1="110" x2="440" y2="310" class="pt-zone" />
+          <text x="448" y="124" class="pt-zone-t">güvenli bölge</text>
+          <line x1="204" y1="160" x2="434" y2="160" class="pt-arrow" />
+          <path d="M212 154 L202 160 L212 166 M426 154 L436 160 L426 166" class="pt-arrow" />
+          <text x="319" y="151" class="pt-m" text-anchor="middle">en az 5 m (TY 2.2.5)</text>
+
+          <!-- trigger person -->
+          <circle cx="480" cy="222" r="8" class="pt-person" />
+          <path d="M480 230 L480 268 M480 268 L471 309 M480 268 L489 309 M480 242 L468 262 M480 242 L494 254" class="pt-person" />
+          <text x="480" y="331" class="pt-s" text-anchor="middle">tetikçi</text>
+
+          <!-- control point: gauge + valves -->
+          <rect x="540" y="262" width="100" height="40" rx="6" class="pt-dev" />
+          <circle cx="563" cy="282" r="13" class="pt-gauge" />
+          <line x1="563" y1="282" x2="571" y2="273" class="pt-needle" />
+          <path d="M588 274 L602 290 L602 274 L588 290 Z" class="pt-dev" />
+          <path d="M612 274 L626 290 L626 274 L612 290 Z" class="pt-dev" style="stroke: var(--bad)" />
+          <text x="590" y="236" class="pt-l" text-anchor="middle">Manometre</text>
+          <text x="590" y="251" class="pt-s" text-anchor="middle">dolum + boşaltma valfi</text>
+          <text x="590" y="331" class="pt-s" text-anchor="middle">valf sorumlusu</text>
+
+          <!-- compressor -->
+          <line x1="640" y1="282" x2="654" y2="282" class="pt-hose" />
+          <rect x="654" y="260" width="100" height="44" rx="6" class="pt-dev" />
+          <text x="704" y="279" class="pt-l" text-anchor="middle">Kompresör</text>
+          <text x="704" y="295" class="pt-s" text-anchor="middle">organizasyon</text>
+        </svg>
+        <figcaption><span class="dg-hint">Etiketleri görmek için yana kaydırın. </span>Şematik, ölçekli değildir. Turuncu çizgi basınçlı hava hattı, noktalı çizgi tetik ipi. Boşaltma valfi kırmızıyla gösterildi.</figcaption>
+      </figure>
+    </div>
+
+    <div class="blk">
+      <h3>Kilit nasıl açılır?</h3>
+      <div class="prose"><p>22 mm tam çaplı nozullarda en yaygın çözüm <b>Clark kablo bağı fırlatıcısıdır</b>. Fırlatma tüpü nozulun içine girer, üzerindeki conta havayı sızdırmaz. Bir halka hâlinde dizilmiş kablo bağları şişe ağzındaki flanşı kavrar; dışlarındaki kayar bilezik onları kapalı tutar.</p></div>
+      <p class="dg-hint">Panelleri görmek için yana kaydırın →</p>
+      <figure class="diagram" role="img" aria-label="Kablo bağı kilidinin üç anı: kilitli, ip çekildi, kalkış">
+        <svg viewBox="0 0 720 256" xmlns="http://www.w3.org/2000/svg">
+<rect x="70" y="214" width="100" height="12" rx="2" class="pt-stand" />
+<rect x="113" y="70" width="14" height="144" class="pt-metal" />
+<g>
+<path d="M80 0 L80 30 Q80 46 104 52 L104 104 L136 104 L136 52 Q160 46 160 30 L160 0 Z" class="pt-body" />
+<path d="M82 0 L82 30 Q82 44 106 50 L106 102 L134 102 L134 50 Q158 44 158 30 L158 0 Z" class="pt-water" />
+<rect x="98" y="104" width="44" height="7" rx="2" class="pt-metal" />
+</g>
+<rect x="113" y="70" width="14" height="34" class="pt-metal" />
+<circle cx="110" cy="92" r="3.5" class="pt-oring" /><circle cx="130" cy="92" r="3.5" class="pt-oring" />
+<path d="M90 214 L90 116 L99 100" class="pt-tie" />
+<path d="M150 214 L150 116 L141 100" class="pt-tie" />
+<rect x="82" y="128" width="76" height="24" rx="3" class="pt-coupler" />
+<path d="M154 152 L176 208 L232 208" class="pt-cord" />
+<polyline points="48,91 106,92" class="pt-lead" /><text x="6" y="95" class="pt-s">conta</text>
+<polyline points="52,139 82,139" class="pt-lead" /><text x="6" y="143" class="pt-s">bilezik</text>
+<polyline points="40,178 89,178" class="pt-lead" /><text x="6" y="174" class="pt-s">kablo</text><text x="6" y="188" class="pt-s">bağı</text>
+<polyline points="128,84 172,62 178,62" class="pt-lead" /><text x="182" y="66" class="pt-s">tüp</text>
+<polyline points="142,108 172,92 178,92" class="pt-lead" /><text x="182" y="96" class="pt-s">flanş</text>
+<text x="180" y="200" class="pt-s">tetik ipi</text>
+<text x="120" y="246" class="pt-l" text-anchor="middle">1 · Kilitli</text>
+<line x1="240" y1="8" x2="240" y2="226" class="pt-sep" />
+<rect x="310" y="214" width="100" height="12" rx="2" class="pt-stand" />
+<rect x="353" y="70" width="14" height="144" class="pt-metal" />
+<g>
+<path d="M320 0 L320 30 Q320 46 344 52 L344 104 L376 104 L376 52 Q400 46 400 30 L400 0 Z" class="pt-body" />
+<path d="M322 0 L322 30 Q322 44 346 50 L346 102 L374 102 L374 50 Q398 44 398 30 L398 0 Z" class="pt-water" />
+<rect x="338" y="104" width="44" height="7" rx="2" class="pt-metal" />
+</g>
+<rect x="353" y="70" width="14" height="34" class="pt-metal" />
+<circle cx="350" cy="92" r="3.5" class="pt-oring" /><circle cx="370" cy="92" r="3.5" class="pt-oring" />
+<path d="M330 214 L314 118 L318 104" class="pt-tie" />
+<path d="M390 214 L406 118 L402 104" class="pt-tie" />
+<rect x="322" y="176" width="76" height="24" rx="3" class="pt-coupler" />
+<path d="M394 200 L410 208 L464 208" class="pt-cord" />
+<path d="M456 202 L468 208 L456 214" class="pt-arrow" />
+<path d="M308 150 L308 186 M302 178 L308 188 L314 178" class="pt-arrow" />
+<text x="360" y="246" class="pt-l" text-anchor="middle">2 · İp çekildi</text>
+<line x1="480" y1="8" x2="480" y2="226" class="pt-sep" />
+<rect x="550" y="214" width="100" height="12" rx="2" class="pt-stand" />
+<path d="M590 51 L566 150 Q600 162 634 150 L610 51 Z" class="pt-jet" /><circle cx="570" cy="168" r="3" class="pt-drop" /><circle cx="588" cy="176" r="2.5" class="pt-drop" /><circle cx="608" cy="170" r="3" class="pt-drop" /><circle cx="626" cy="180" r="2.5" class="pt-drop" /><circle cx="578" cy="190" r="2" class="pt-drop" /><circle cx="616" cy="194" r="2" class="pt-drop" />
+<rect x="593" y="70" width="14" height="144" class="pt-metal" />
+<g transform="translate(0 -60)">
+<path d="M560 0 L560 30 Q560 46 584 52 L584 104 L616 104 L616 52 Q640 46 640 30 L640 0 Z" class="pt-body" />
+<path d="M562 0 L562 22 Q570 18 584 26 Q600 34 616 26 Q630 18 638 22 L638 0 Z" class="pt-water" />
+<path d="M586 60 L614 60 L614 102 L586 102 Z" class="pt-water" />
+<rect x="578" y="104" width="44" height="7" rx="2" class="pt-metal" />
+</g>
+<path d="M570 214 L554 118 L558 104" class="pt-tie" />
+<path d="M630 214 L646 118 L642 104" class="pt-tie" />
+<rect x="562" y="176" width="76" height="24" rx="3" class="pt-coupler" />
+<path d="M528 120 L528 40 M521 52 L528 40 L535 52" class="pt-arrow" />
+<text x="600" y="246" class="pt-l" text-anchor="middle">3 · Kalkış</text>
+</svg>
+
+      </figure>
+      <ol class="steps">
+        <li><span><b>Kilitli:</b> Bilezik kablo bağlarını flanşın üzerinde kapalı tutar. Roket ne kadar basınçlandırılırsa basınçlandırılsın yerinden çıkamaz.</span></li>
+        <li><span><b>İp çekildi:</b> Tetik ipi bileziği aşağı kaydırır; kablo bağları kendi esneklikleriyle dışarı açılır ve flanşı bırakır.</span></li>
+        <li><span><b>Kalkış:</b> Roketi tutan hiçbir şey kalmaz. İçerideki basınç roketi conta üzerinden yukarı iter ve su nozuldan fışkırır.</span></li>
+      </ol>
+      <div class="cols2">
+        <div class="box plain"><h4>Diğer seçenek: Gardena</h4><p>Bahçe hortumu hızlı bağlantısı kullanılır; nozul bir Gardena erkek ucudur. İp, bağlantının kilit bileziğini geri çekerek roketi bırakır. 9 mm gibi küçük nozullar için uygundur.</p></div>
+        <div class="box plain"><h4>Fırlatma tüpü</h4><p>Tüp uzun yapılırsa roket suyu atmaya başlamadan önce tüp üzerinde piston gibi itilir. Sunumdaki deneyime göre bu, irtifayı %10–15 artırabilir.</p></div>
+      </div>
+      <div class="callout info">
+        <b>Rectus 26 nerede durmalı?</b>
+        <p>Kural, basınçlandırma arayüzünde erkek Rectus Type 26 parçasının kullanılmasını ve organizasyonun ortak bir kompresör arayüzü sağlayacağını söylüyor (TY 2.2.6). Bu erkek ucun doğrudan roketin üzerinde mi, yoksa sizin fırlatıcınızın hava girişinde mi olacağı kilit tasarımını değiştirir. Soru-Cevap oturumunda organizasyona sorun ve cevabı raporunuzda belgeleyin.</p>
+      </div>
+    </div>
+
+    <div class="blk">
+      <h3>Pencereden önce: hazırlık alanında</h3>
+      <div class="box plain">
+        <ul>
+          <li>Tankları hacim doğrulaması için jüriye gösterin; jüri tankları mühürleyebilir (TY 2.3.3).</li>
+          <li>Çalkalanma tankını tartarak tam %50 doldurun; %50 çizgisi görünür olsun (TY 2.1.5).</li>
+          <li>Altimetreyi jüri gözetiminde takın ve sıfırlayın (TY 2.4.2).</li>
+          <li>Basınç testinin yapılmış ve belgelenmiş olduğundan emin olun (TY 2.2.6).</li>
+          <li>Dolu roketin kalkış ağırlığını tartın (en fazla 5 kg).</li>
+          <li>Fırlatma kutusu: yedek conta ve kablo bağı, silikon gres, tartı ve ölçü kabı, iletki, havlu, koruyucu gözlükler.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="blk">
+      <h3>30 dakikalık pencere, adım adım</h3>
+      <ol class="steps">
+        <li><span><b>Rampayı kurun ve açıyı ayarlayın.</b> Rampayı zemine sabitleyin, rayı dikeyden 5° eğin (85° ± 3°). Jüri açıyı iletkiyle veya fotoğraftan ölçer. Eğimin yönünü rüzgâra göre önceden kararlaştırın.</span></li>
+        <li><span><b>İtki suyunu ölçüp doldurun.</b> Önceden tarttığınız miktarı (örnek rokette 900 ml) roket ters dururken, nozul yukarıdayken hazneye koyun. Bu kütle çalkalanan sudan fazla olamaz.</span></li>
+        <li><span><b>Roketi fırlatıcıya takın.</b> Roketi çevirip nozulu fırlatma tüpünün üzerinden contaya kadar itin; kablo bağlarını flanşın üzerine kapatıp bileziği üstlerine kaydırın. Ray pabuçlarının raya oturduğunu kontrol edin.</span></li>
+        <li><span><b>Hatları bağlayın.</b> Kompresör hattını Rectus 26 bağlantısına takın. Hortumu ve tetik ipini güvenli mesafenin dışına kadar serin; ipin gergin olmadığından emin olun, yoksa erken açılabilir.</span></li>
+        <li><span><b>Fırlatmayı beyan edin.</b> Basınçlandırmadan önce jüriye bu denemenin "Test" mi yoksa "Puanlı" mı olduğunu söyleyin (TY 2.1.10).</span></li>
+        <li><span><b>Alanı boşaltın.</b> Herkes en az 5 m geride (alan kuralları daha fazlasını isteyebilir), koruyucu gözlükler takılı, videocunuz organizasyonun belirlediği noktada kayıtta (TY 2.2.7).</span></li>
+        <li><span><b>Basınçlandırın.</b> Dolum valfini açın, manometreyi izleyin ve hedef basınçta (örnek rokette 8 bar; asla 10 bar'ın üzerinde değil) kapatın. Deneme hakkı bu andan itibaren sayılır.</span></li>
+        <li><span><b>Sızıntıyı kontrol edin.</b> 10–20 saniye manometreyi izleyin. Basınç düşüyorsa conta sızdırıyordur: düşük basınçla fırlatmaya ya da uzaktan boşaltıp iptal etmeye karar verin.</span></li>
+        <li><span><b>Geri sayım ve tetik.</b> "3, 2, 1" ile ipi tek ve kararlı bir hareketle çekin. Bilezik kayar, kablo bağları açılır ve roket kalkar. Uçuş süresi bu anda başlar.</span></li>
+        <li><span><b>Roketi izleyin.</b> Roket havadayken gözünüzü ondan ayırmayın; iniş noktasını işaretleyecek bir gözcü belirleyin. Sonrası bir sonraki konuda.</span></li>
+      </ol>
+      <div class="callout warn">
+        <b>Roket kalkmazsa</b>
+        <p>Basınçlı bir rokete asla yaklaşmayın. Önce boşaltma valfini uzaktan açın, manometre sıfırı gösterene kadar bekleyin, ancak ondan sonra yaklaşın. İptal edilen deneme de üç haktan biri olarak sayılır (TY 2.1.10).</p>
+      </div>
+    </div>
+
+    <div class="blk">
+      <h3>Kalkış anında ne olur?</h3>
+      <div class="facts">
+        <div class="fact"><b>≈ 21 g</b><span>kalkıştaki en yüksek ivme</span></div>
+        <div class="fact"><b>0,07 s</b><span>su biter, roket hâlâ rayda</span></div>
+        <div class="fact"><b>0,11 s</b><span>raydan ayrılır, ≈ 15 m/s</span></div>
+        <div class="fact"><b>0,14 s</b><span>hava da biter, itki sona erer</span></div>
+      </div>
+      <p class="small">Değerler örnek İKARUS-1 içindir: 8 bar, 900 ml itki suyu, 22 mm nozul.</p>
+    </div>
+
+    <div class="cols2">
+      <div class="box ask">
+        <h4>Yarışma ne istiyor?</h4>
+        <ul>
+          <li>Basınçlandırma ve basınç boşaltmanın güvenli mesafeden yapılması; finalde gösterilmesi istenebilir (TY 2.2.2).</li>
+          <li>Rectus Type 26 bağlantı ve fırlatmadan önce basınç testi (TY 2.2.6).</li>
+          <li>Roketin 30 dakikalık pencere içinde havalanması (TY 2.1.10).</li>
+          <li>Tasarım İncelemesi'nde fırlatma mekanizmasının anlatılması ("Üretim, Güvenlik ve Fırlatma Mekanizması", %20).</li>
+        </ul>
+      </div>
+      <div class="box todo">
+        <h4>Biz ne yapmalıyız?</h4>
+        <ul>
+          <li>Yazılı bir fırlatma kontrol listesi ve rol dağılımı hazırlayın: tetikçi, valf sorumlusu, gözcü, videocu.</li>
+          <li>30 dakikalık pencereyi provada kronometreyle deneyin.</li>
+          <li>Tetik ipini ve boşaltma valfini 5 m'den uzun hatla test edin.</li>
+          <li>Kilidi su doluyken çalışma basıncında sızdırmazlık için test edin.</li>
+        </ul>
+        <button type="button" class="try" data-goto="sonrasi">Sonra ne olur? Su bittikten sonrası →</button>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ===================== SU BİTTİKTEN SONRA ===================== -->
+  <article class="topic" id="t-sonrasi" data-group="Mühendislik temelleri" data-title="Su bittikten sonra ne olur?" hidden>
+    <header class="t-head">
+      <span class="eyebrow">Mühendislik temelleri</span>
+      <h2>Su bittikten sonra ne olur?</h2>
+      <p class="lead">Su, fırlatmanın ilk 0,07 saniyesinde biter; itki 0,14 saniyede tamamen sona erer. Uçuşun geri kalan yaklaşık 3 saniyesi itkisiz geçer: roket kazandığı hızla tırmanır, durur, döner ve düşer. Bu sırada kumanda edeceğiniz bir şey yoktur. Sizin işiniz izlemek, kaydetmek ve inişten sonra doğru adımları atmaktır.</p>
+    </header>
+
+    <div class="blk">
+      <h3>Örnek uçuşun yolu</h3>
+      <figure class="diagram tall" role="img" aria-label="Örnek uçuşun yörüngesi: itki 1,5 metrede biter, roket 1,62 saniyede 12,3 metreye çıkar, dönerek düşer ve 3,32 saniyede 5,1 metre uzağa iner">
+        <svg viewBox="0 0 720 450" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(40 0)">
+          <line x1="0" y1="400" x2="660" y2="400" class="pt-ground" />
+          <line x1="150" y1="400" x2="150" y2="54.9" class="pt-lead" stroke-dasharray="4 5" />
+          <line x1="150" y1="54.9" x2="207" y2="54.9" class="pt-lead" stroke-dasharray="4 5" />
+          <text x="144" y="59" class="pt-m" text-anchor="end">12,3 m</text>
+          <rect x="140" y="400" width="20" height="6" class="pt-stand" />
+          <line x1="150" y1="400" x2="152.4" y2="372.1" class="pt-rail" />
+
+          <path class="tr-up" d="M154.5 349.7 L155.2 341.6 L156 333.7 L156.8 325.9 L157.6 318.1 L158.8 306.8 L159.6 299.3 L160.4 292 L161.2 284.8 L162.1 277.7 L162.9 270.7 L163.7 263.8 L164.6 257 L165.4 250.4 L166.2 243.8 L167.1 237.4 L167.9 231.1 L169.2 221.8 L170 215.8 L170.9 209.9 L171.7 204 L172.5 198.3 L173.4 192.8 L174.2 187.3 L175 181.9 L175.9 176.6 L176.7 171.5 L177.5 166.5 L178.4 161.5 L179.2 156.7 L180 152 L180.8 147.4 L181.6 143 L182.5 138.6 L183.3 134.4 L184.1 130.2 L184.9 126.2 L185.7 122.3 L186.5 118.5 L187.3 114.8 L188.1 111.2 L189.3 106 L190.1 102.7 L190.9 99.5 L191.7 96.4 L192.5 93.5 L193.3 90.6 L194.1 87.9 L194.9 85.2 L195.7 82.7 L196.5 80.3 L197.3 78 L198.1 75.8 L198.8 73.7 L199.6 71.7 L200.4 69.8 L201.2 68.1 L202 66.4 L202.8 64.9 L203.6 63.5 L204.4 62.1 L205.2 60.9 L206 59.8 L206.8 58.8 L207.6 58 L208.4 57.2 L209.2 56.5 L210 56 L210.7 55.6 L211.5 55.2 L212.3 55 L213.1 54.9"/>
+<path class="tr-down" d="M213.9 54.9 L214.7 55 L215.5 55.2 L216.3 55.6 L217.1 56 L217.9 56.5 L218.8 57.2 L219.6 58 L220.4 58.8 L221.2 59.8 L222 60.9 L222.8 62.1 L223.6 63.4 L224.4 64.8 L225.3 66.4 L226.1 68 L226.9 69.7 L227.7 71.6 L228.6 73.5 L229.8 76.7 L231.1 80 L232.3 83.6 L233.6 87.5 L234.9 91.5 L236.2 95.9 L237.5 100.4 L238.8 105.2 L240.1 110.2 L241.4 115.5 L242.8 120.9 L244.1 126.6 L245.5 132.5 L246.9 138.7 L248.3 145 L249.7 151.6 L251.2 158.4 L252.7 165.4 L254.1 172.6 L255.6 179.9 L257.2 187.5 L258.7 195.2 L260.3 203.1 L261.9 211.1 L263.5 219.3 L265.1 227.6 L266.8 236 L268.5 244.5 L270.1 253.1 L271.8 261.8 L273.5 270.6 L275.1 279.5 L276.8 288.4 L278.4 297.4 L280 306.5 L281.5 315.7 L283 325.1 L284.5 334.6 L285.9 344.4 L287.3 354.3 L288.7 364.5 L290.1 375 L291.5 385.6 L292.9 396.5 L293.4 400"/>
+<path class="tr-thrust" d="M150 400 L150.1 398.9 L150.4 395.6 L150.8 390.5 L151.5 383.4 L152.1 375.5 L152.9 367.2 L153.6 358.7"/>
+<g class="tr-rk" transform="translate(166.2 243.8) rotate(-93)"><path d="M-12 -3.5 L6 -3.5 L12 0 L6 3.5 L-12 3.5 Z"/><path class="tr-rk-f" d="M-12 -3.5 L-15 -7 L-8 -3.5 Z M-12 3.5 L-15 7 L-8 3.5 Z"/></g>
+<g class="tr-rk" transform="translate(190.9 99.5) rotate(-106)"><path d="M-12 -3.5 L6 -3.5 L12 0 L6 3.5 L-12 3.5 Z"/><path class="tr-rk-f" d="M-12 -3.5 L-15 -7 L-8 -3.5 Z M-12 3.5 L-15 7 L-8 3.5 Z"/></g>
+<g class="tr-rk" transform="translate(213.1 54.9) rotate(-109)"><path d="M-12 -3.5 L6 -3.5 L12 0 L6 3.5 L-12 3.5 Z"/><path class="tr-rk-f" d="M-12 -3.5 L-15 -7 L-8 -3.5 Z M-12 3.5 L-15 7 L-8 3.5 Z"/></g>
+<g class="tr-rk" transform="translate(234.9 91.5) rotate(-115)"><path d="M-12 -3.5 L6 -3.5 L12 0 L6 3.5 L-12 3.5 Z"/><path class="tr-rk-f" d="M-12 -3.5 L-15 -7 L-8 -3.5 Z M-12 3.5 L-15 7 L-8 3.5 Z"/></g>
+<g class="tr-rk" transform="translate(255.6 179.9) rotate(-137)"><path d="M-12 -3.5 L6 -3.5 L12 0 L6 3.5 L-12 3.5 Z"/><path class="tr-rk-f" d="M-12 -3.5 L-15 -7 L-8 -3.5 Z M-12 3.5 L-15 7 L-8 3.5 Z"/></g>
+<g class="tr-rk" transform="translate(275.1 279.5) rotate(-193)"><path d="M-12 -3.5 L6 -3.5 L12 0 L6 3.5 L-12 3.5 Z"/><path class="tr-rk-f" d="M-12 -3.5 L-15 -7 L-8 -3.5 Z M-12 3.5 L-15 7 L-8 3.5 Z"/></g>
+<g class="tr-rk" transform="translate(287.3 354.3) rotate(-260)"><path d="M-12 -3.5 L6 -3.5 L12 0 L6 3.5 L-12 3.5 Z"/><path class="tr-rk-f" d="M-12 -3.5 L-15 -7 L-8 -3.5 Z M-12 3.5 L-15 7 L-8 3.5 Z"/></g>
+
+
+          <circle cx="151.1" cy="387.1" r="3.6" class="tr-pt" />
+          <circle cx="152.4" cy="372.2" r="3.6" class="tr-pt" />
+          <circle cx="153.6" cy="358.7" r="3.6" class="tr-pt" />
+          <circle cx="213.1" cy="54.9" r="6" class="tr-apo" />
+          <path d="M287.4 394 L299.4 406 M299.4 394 L287.4 406" class="tr-land" />
+
+          <!-- left labels -->
+          <polyline points="140,326 151,358" class="pt-lead" />
+          <text x="136" y="318" class="pt-l" text-anchor="end">İtki bitti · 0,14 s</text>
+          <text x="136" y="333" class="pt-s" text-anchor="end">≈ 1,5 m · ≈ 15 m/s</text>
+          <polyline points="140,360 149,371" class="pt-lead" />
+          <text x="136" y="364" class="pt-l" text-anchor="end">Raydan çıktı · 0,11 s</text>
+          <polyline points="140,390 147,387" class="pt-lead" />
+          <text x="136" y="394" class="pt-l" text-anchor="end">Su bitti · 0,07 s</text>
+
+          <polyline points="142,151 178,148" class="pt-lead" />
+          <text x="138" y="140" class="pt-l" text-anchor="end">Yükselme</text>
+          <text x="138" y="156" class="pt-m" text-anchor="end">0,14 → 1,62 s</text>
+          <text x="138" y="171" class="pt-s" text-anchor="end">itkisiz, yavaşlıyor</text>
+
+          <!-- right labels -->
+          <polyline points="221,52 334,42" class="pt-lead" />
+          <text x="340" y="46" class="pt-l">Tepe noktası · 1,62 s</text>
+          <text x="340" y="62" class="pt-s">12,3 m · hız ≈ 1,4 m/s</text>
+          <text x="340" y="77" class="pt-s">Altimetre en yüksek değeri burada kaydeder</text>
+
+          <polyline points="270,234 334,192" class="pt-lead" />
+          <text x="340" y="196" class="pt-l">Dönüş ve düşüş · 1,62 → 3,32 s</text>
+          <text x="340" y="212" class="pt-s">Burun aşağı döner, hız ≈ 13 m/s'ye çıkar</text>
+
+          <polyline points="300,394 334,350" class="pt-lead" />
+          <text x="340" y="352" class="pt-l">İniş · 3,32 s</text>
+          <text x="340" y="368" class="pt-s">Rampadan 5,1 m uzakta, ≈ 13 m/s hızla</text>
+          <text x="340" y="383" class="pt-s">Kronometre burada durur</text>
+
+          <!-- horizontal distance -->
+          <line x1="150" y1="420" x2="293.4" y2="420" class="pt-lead" />
+          <line x1="150" y1="414" x2="150" y2="426" class="pt-lead" />
+          <line x1="293.4" y1="414" x2="293.4" y2="426" class="pt-lead" />
+          <text x="221.7" y="440" class="pt-m" text-anchor="middle">yatay mesafe 5,1 m</text>
+          </g>
+        </svg>
+        <figcaption><span class="dg-hint">Etiketleri görmek için yana kaydırın. </span>Örnek İKARUS-1 (8 bar, 900 ml itki suyu, 2 m/s rüzgâr) için simülasyon sonucu; iki eksen aynı ölçekte. Turuncu kısım itki, düz çizgi yükselme, kesikli çizgi düşüş. Küçük roket çizimleri o anki duruşu gösterir.</figcaption>
+      </figure>
+      <div class="calc"><span>Puan = ( √(5,12² + 12,33²) + 3,32 ) × 1,00 / 2,66</span><span>= ( 13,35 + 3,32 ) × 0,376 = 6,27 puan</span></div>
+    </div>
+
+    <div class="blk">
+      <h3>Evre evre</h3>
+      <ol class="tl">
+        <li><span class="tl-d">0,07 s</span><div><b>Su biter, hava evresi başlar</b><p>Haznede hâlâ yaklaşık 4,4 bar hava vardır. Bu hava nozuldan çok hızlı çıkar ve kısa, zayıf bir ek itki verir. Hızla genişleyen hava soğur ve içindeki nem yoğuşur: kalkışta görülen beyaz sis bulutu budur. Roket bu anda hâlâ raydadır.</p></div></li>
+        <li><span class="tl-d">0,11 s</span><div><b>Raydan ayrılır</b><p>Yaklaşık 15 m/s hızla. Bundan sonra roketin yönünü yalnızca kanatçıklar korur.</p></div></li>
+        <li><span class="tl-d">0,14 s</span><div><b>İtki tamamen biter</b><p>Yaklaşık 1,5 m yükseklikte ve 15 m/s hızda. Kalkışta yaklaşık 21 g olan görünür yerçekimi, su biterken ve hava evresi boyunca hızla neredeyse sıfıra iner.</p></div></li>
+        <li><span class="tl-d">0,14 – 1,62 s</span><div><b>İtkisiz tırmanış</b><p>Yerçekimi ve hava direnci roketi saniyede yaklaşık 10 m/s yavaşlatır. Kanatçıklar burnu rüzgâra doğru çevirdiği için yol hafifçe bükülür.</p></div></li>
+        <li><span class="tl-d">1,62 s</span><div><b>Tepe noktası</b><p>12,3 m. Hız 1,4 m/s civarına düşer; bu hızda kanatçıklar neredeyse etkisizdir. Altimetre en yüksek değeri burada kaydeder.</p></div></li>
+        <li><span class="tl-d">1,62 – 3,32 s</span><div><b>Dönüş ve düşüş</b><p>Roket burnunu aşağı çevirir ve hızlanır. Hava direnci arttıkça kanatçıklar yeniden etkili olur ve roket burun önde düşer.</p></div></li>
+        <li><span class="tl-d">3,32 s</span><div><b>İniş</b><p>Rampadan yaklaşık 5,1 m uzakta, 13 m/s civarında bir hızla. Jürinin kronometresi bu anda durur; uçuş süresi budur.</p></div></li>
+      </ol>
+    </div>
+
+    <div class="blk">
+      <h3>Çalkalanma tankında neler oluyor?</h3>
+      <div class="sstrip">
+        <div class="sstep">
+          <svg viewBox="0 0 120 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <text x="50" y="13" class="pt-m" text-anchor="middle">burun ↑</text>
+            <rect x="22" y="20" width="56" height="112" rx="8" class="pt-body" />
+            <rect x="24" y="78" width="52" height="52" rx="6" class="pt-water" />
+            <line x1="24" y1="78" x2="76" y2="78" class="pt-wline" />
+            <line x1="24" y1="58" x2="36" y2="58" class="pt-baffle" /><line x1="64" y1="58" x2="76" y2="58" class="pt-baffle" />
+            <line x1="24" y1="102" x2="36" y2="102" class="pt-baffle" /><line x1="64" y1="102" x2="76" y2="102" class="pt-baffle" />
+            <path d="M100 42 L100 114 M94 104 L100 116 L106 104" class="pt-arrow-w" />
+            <text x="98" y="32" class="pt-m" text-anchor="middle">21 g</text>
+          </svg>
+          <span class="tm">İtki · 0 – 0,14 s</span>
+          <b>Su tabana bastırılır</b>
+          <p>Yaklaşık 21 g'lik ivme suyu kuyruk tarafına yapıştırır. Yüzey düz ve sakindir; su neredeyse hiç çalkalanmaz.</p>
+        </div>
+        <div class="sstep">
+          <svg viewBox="0 0 120 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <text x="50" y="13" class="pt-m" text-anchor="middle">burun ↑</text>
+            <rect x="22" y="20" width="56" height="112" rx="8" class="pt-body" />
+            <path d="M28 116 Q36 98 50 104 Q64 96 72 112 Q74 126 60 128 Q48 132 36 128 Q26 126 28 116 Z" class="pt-water" />
+            <circle cx="38" cy="84" r="3" class="pt-drop" /><circle cx="56" cy="78" r="2.5" class="pt-drop" />
+            <circle cx="46" cy="66" r="2" class="pt-drop" /><circle cx="66" cy="90" r="2.2" class="pt-drop" />
+            <line x1="24" y1="58" x2="36" y2="58" class="pt-baffle" /><line x1="64" y1="58" x2="76" y2="58" class="pt-baffle" />
+            <line x1="24" y1="102" x2="36" y2="102" class="pt-baffle" /><line x1="64" y1="102" x2="76" y2="102" class="pt-baffle" />
+            <path d="M100 112 L100 88 M95 96 L100 86 L105 96" class="pt-arrow-w" />
+            <text x="98" y="130" class="pt-m" text-anchor="middle">≈ 0 g</text>
+          </svg>
+          <span class="tm">İtki biter · 0,14 s</span>
+          <b>Su serbest kalır</b>
+          <p>Görünür ağırlık bir anda kaybolur. Su artık tabana bastırılmaz; hava direncinin etkisiyle yavaşça burun tarafına doğru "düşer", yüzey dağılır ve tırmanış boyunca dalgalanır.</p>
+        </div>
+        <div class="sstep">
+          <svg viewBox="0 0 120 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g transform="translate(0 4) rotate(20 50 76)">
+              <text x="50" y="13" class="pt-m" text-anchor="middle">burun ↑</text>
+              <rect x="22" y="20" width="56" height="112" rx="8" class="pt-body" />
+              <path d="M48 22 L70 22 Q76 22 76 28 L76 124 Q76 130 70 130 L52 130 Q42 76 48 22 Z" class="pt-water" />
+              <line x1="24" y1="58" x2="36" y2="58" class="pt-baffle" /><line x1="64" y1="58" x2="76" y2="58" class="pt-baffle" />
+              <line x1="24" y1="102" x2="36" y2="102" class="pt-baffle" /><line x1="64" y1="102" x2="76" y2="102" class="pt-baffle" />
+            </g>
+            <path d="M104 26 A62 62 0 0 1 110 96 M103 88 L110 99 L116 88" class="pt-arrow" />
+          </svg>
+          <span class="tm">Tepe ve dönüş · ≈ 1,6 s</span>
+          <b>Su yana savrulur</b>
+          <p>Roket dönerken su duvara savrulur; ağırlık merkezi yer değiştirir ve rokete tork uygular. Bölme levhaları bu hareketi frenler. Simülasyonda yanal kayma tırmanışta da büyüktür; dönüşten sonra su tank duvarına dayanır.</p>
+        </div>
+        <div class="sstep">
+          <svg viewBox="0 0 120 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <text x="50" y="13" class="pt-m" text-anchor="middle">burun ↑</text>
+            <rect x="22" y="20" width="56" height="112" rx="8" class="pt-body" />
+            <path d="M24 28 Q24 22 30 22 L70 22 Q76 22 76 28 L76 72 Q63 66 50 72 T24 72 Z" class="pt-water" />
+            <path d="M24 72 Q37 78 50 72 T76 72" class="pt-wline" />
+            <line x1="24" y1="58" x2="36" y2="58" class="pt-baffle" /><line x1="64" y1="58" x2="76" y2="58" class="pt-baffle" />
+            <line x1="24" y1="102" x2="36" y2="102" class="pt-baffle" /><line x1="64" y1="102" x2="76" y2="102" class="pt-baffle" />
+            <path d="M100 112 L100 42 M94 52 L100 40 L106 52" class="pt-arrow-w" />
+          </svg>
+          <span class="tm">Düşüş · 1,6 – 3,3 s</span>
+          <b>Su buruna yaslanır</b>
+          <p>Roket burun aşağı düşerken hava direnci arttıkça su burun tarafına toplanır ve iniş darbesinde öne doğru çarpar.</p>
+        </div>
+      </div>
+      <p class="small">Tanklar roketin kendi ekseninde çizildi; üçüncü karede roketin dönüşü gösteriliyor. Mavi oklar suyu iten görünür yerçekiminin yönünü gösterir.</p>
+    </div>
+
+    <div class="blk">
+      <h3>Siz ne yapmalısınız?</h3>
+      <div class="cols2">
+        <div class="box plain">
+          <h4>Uçuş sırasında (≈ 3 saniye)</h4>
+          <ul>
+            <li><b>Kumanda edeceğiniz bir şey yok.</b> Pasif bir roket bu evrede tamamen fiziğe göre uçar. Aktif kontrol sisteminiz varsa kendi başına çalışmalıdır.</li>
+            <li><b>Gözcü:</b> Bir kişi gözünü roketten hiç ayırmasın ve iniş noktasını aklında tutsun.</li>
+            <li><b>Video:</b> Uçuşu organizasyonun belirlediği noktadan sizin kaydetmeniz gerekir (TY 2.2.7); bunun için bir videocu ayırın. Ayrıca yandan ağır çekim alın; dönüşü ve çalkalanmayı analiz edip raporda ve sunumda kanıt olarak kullanırsınız.</li>
+            <li><b>Güvenlik:</b> Roket insanlara doğru düşüyorsa yüksek sesle uyarın. Düşen roketi yakalamaya çalışmayın: suyu bitmiş hâliyle bile yaklaşık 1,8 kg ve 13 m/s.</li>
+          </ul>
+        </div>
+        <div class="box plain">
+          <h4>İnişten sonra</h4>
+          <ol class="steps">
+            <li><span><b>İzin bekleyin.</b> Jüri veya alan sorumlusu izin vermeden alana girmeyin; başka bir fırlatma olabilir.</span></li>
+            <li><span><b>Ölçüm jüriyle yapılır.</b> Yatay mesafe ölçüm tekerleğiyle (yedek: şerit metre), süre kronometreyle ölçülür. Rokete dokunmadan önce iniş noktasının işaretlendiğinden emin olun.</span></li>
+            <li><span><b>Altimetreyi jüriyle okuyun.</b> Muhafazayı jürinin önünde açın; kendiniz sıfırlamayın. Takımın sorumlu olduğu kayıp, hasar ya da okunamayan ölçümde %25 ceza uygulanır (TY 2.4.7).</span></li>
+            <li><span><b>Tank denetimine hazır olun.</b> Jüri fırlatmalardan sonra çalkalanma tankını kesip açabilir (TY 2.3.4).</span></li>
+            <li><span><b>Hasar kontrolü.</b> Haznede ezik, beyazlaşma veya çatlak; kanatçık hizası; nozul ve conta; altimetre bölmesinde su. Çarpmada ezilen bir hazneyi yeniden test etmeden basınçlandırmayın.</span></li>
+            <li><span><b>Kaydedin ve ayarlayın.</b> Basınç, su miktarı, rüzgâr, eğim yönü, irtifa, mesafe ve süreyi yazın; simülasyonla karşılaştırıp sonraki atış için tek bir değişikliğe karar verin. Toplam en fazla 3 hakkınız var (TY 2.1.9).</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="cols2">
+      <div class="box ask">
+        <h4>Bu evrede puanı ne artırır?</h4>
+        <ul>
+          <li><b>Süre</b> puana doğrudan eklenir: yavaş inen roket daha çok puan alır. Tepe noktasında açılan kanatla süzülme bunu sağlayabilir.</li>
+          <li><b>Kararlılık:</b> Tırmanışta yalpalayan roket enerjisini sürüklemeye harcar ve daha alçakta kalır.</li>
+          <li><b>Paraşüt:</b> Kılavuz, uçuşta rokete bağlıyken paraşüt açılmadığının kontrol edileceğini söylüyor (Tİ 3). Kullanmayı düşünüyorsanız Soru-Cevap'ta sorun.</li>
+          <li><b>Tank ayırma:</b> Kurallar basınçlı (itki) tankların ancak araç havalandıktan sonra ayrılabileceğini söylüyor (TY 2.1.6). Bu bir tasarım fırsatı olabilir; ölçümün hangi parça üzerinden yapılacağını organizasyona sorun.</li>
+        </ul>
+      </div>
+      <div class="box todo">
+        <h4>Simülasyonda görün</h4>
+        <ul>
+          <li>Örnek uçuşu ağır çekimde izleyin; itki bitince tanktaki suyun nasıl serbest kaldığına bakın.</li>
+          <li>Uçuş sekmesindeki "Uçuş olayları" listesinde her evrenin zamanını görün.</li>
+          <li>"Süzülen" roketi deneyip sürenin puana etkisini karşılaştırın.</li>
+        </ul>
+        <button type="button" class="try" data-try='{}'>Örnek uçuşu izle →</button>
+        <button type="button" class="try ghost" data-sim="ucus">Olay listesini aç →</button>
+        <button type="button" class="try ghost" data-try='{"dry":0.4,"payload":0.5,"Vc":2,"Vsu":0.5,"P":10,"tube":true,"wing":"acilir","wspan":1.6,"wchord":20,"winc":6}'>Süzülen roketi dene →</button>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ===================== KARARLILIK ===================== -->
+  <article class="topic" id="t-kararlilik" data-group="Mühendislik temelleri" data-title="Kararlılık: ağırlık ve basınç merkezi" hidden>
+    <header class="t-head">
+      <span class="eyebrow">Mühendislik temelleri</span>
+      <h2>Kararlılık: ağırlık ve basınç merkezi</h2>
+      <p class="lead">Bir roketin düz uçması için ağırlık merkezi (AM), aerodinamik kuvvetlerin etki ettiği basınç merkezinin (BM) önünde olmalıdır. Rüzgâr roketi döndürmeye çalıştığında kanatçıklar onu geri çevirir.</p>
+    </header>
+    <div class="prose">
+      <p><b>Kararlılık payı</b>, AM ile BM arasındaki mesafenin gövde çapına bölünmesidir ve "kalibre" ile ifade edilir. Model roketçilikte yaygın kural 1–2 kalibredir. 1'in altı yetersiz kararlılık; çok yüksek değerler ise roketin rüzgâra doğru aşırı dönmesine (weathercocking) yol açar.</p>
+      <p>Su roketinde AM uçuş boyunca kayar: itki suyu genellikle kuyruk tarafında olduğundan su bittikçe AM öne gelir ve kararlılık artar. Çalkalanma tankındaki su ise yana kaydıkça hem AM'yi hem de rokete etki eden momenti değiştirir.</p>
+      <p>Çalkalanma tankını AM'ye yakın yerleştirmek, suyun yarattığı momentin kolunu kısaltır. Ağır suyu buruna yakın koymak ise AM'yi öne alıp kararlılığı artırır ama momenti büyütür. Bu ödünleşimi konsept aşamasında hesaplayın.</p>
+    </div>
+    <div class="cols2">
+      <div class="box ask">
+        <h4>Yarışma ne istiyor?</h4>
+        <ul>
+          <li>Konsept incelemesinde stabilite analizi (KTR %25 bölümü).</li>
+          <li>NTR Nihai Veri Sayfası'nda AM ve BM konumları.</li>
+          <li>Finalde "Genel Roket Tasarımı" bölümünde tasarım kararlarının gerekçesi.</li>
+        </ul>
+      </div>
+      <div class="box todo">
+        <h4>Biz ne yapmalıyız?</h4>
+        <ul>
+          <li>Roketi OpenRocket'ta modelleyin; suyu kütle bileşeni olarak ekleyip kalkış ve yanma sonu için ayrı hesaplayın.</li>
+          <li>BM'yi Barrowman yöntemiyle elle kontrol edin.</li>
+          <li>Gerçek AM'yi dolu roketi ipe asarak veya bıçak sırtında dengeleyerek ölçün.</li>
+          <li>Kanatçık boyutunu kararlılık payı ile sürükleme arasında seçin.</li>
+        </ul>
+        <button type="button" class="try" data-sim="roket">Simülasyonda AM ve BM'yi gör →</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===================== GÜVENLİK ===================== -->
+  <article class="topic" id="t-guvenlik" data-group="Mühendislik temelleri" data-title="Basınç haznesi ve güvenlik" hidden>
+    <header class="t-head">
+      <span class="eyebrow">Mühendislik temelleri</span>
+      <h2>Basınç haznesi ve güvenlik</h2>
+      <p class="lead">10 bar çok yüksek bir basınçtır. Basınç haznesi seçimi ve testi hem güvenliğin hem de NTR'deki güvenlik değerlendirmesinin temelidir.</p>
+    </header>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Hazne</th><th>Artıları</th><th>Eksileri</th></tr></thead>
+      <tbody>
+        <tr><td>PET şişe</td><td>En basit, hafif. Gazlı içecek şişelerini seçin, düz duvarlı olanları tercih edin.</td><td>Görece küçük hacim. Normal şişeler yaklaşık 13 bar'da (190 psi) patlar, 9 bar'da (130 psi) kalıcı şekil değiştirmeye başlar.</td></tr>
+        <tr><td>Birleştirilmiş PET</td><td>Az ağırlıkla çok hacim; modüler.</td><td>Özel yapıştırıcı (PL Premium vb.) ve pratik ister. Test öncesi en az 3 gün bekleyin. Tornado tüpleri boyundan bağlar.</td></tr>
+        <tr><td>Doldurulabilir PET</td><td>Normal şişelerden sağlam.</td><td>Daha ağır; 10 bar'ı kaldırmalı ama test edilmeli; her ülkede bulunmaz.</td></tr>
+        <tr><td>Polikarbonat FTC tüp</td><td>Aerodinamik, küçük kesit; uç kapaklar 3B basılabilir; uzun fırlatma tüpü kullanılabilir.</td><td>Küçük hacim.</td></tr>
+        <tr><td>Karbon / cam elyafı</td><td>Hafif ve güçlü olabilir.</td><td>Üretimi zor; "makul" sayılmayabilir (ML 3).</td></tr>
+        <tr><td>PVC boru</td><td colspan="2"><b>Kullanmayın:</b> keskin parçalar hâlinde parçalanabilir.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="blk">
+      <h3>Hidrostatik patlama testi</h3>
+      <ol class="steps">
+        <li><span>Hazneyi <b>tamamen suyla</b> doldurun (hava sıkışmadığı için patlama enerjisi düşük olur).</span></li>
+        <li><span>Patlayana kadar yavaşça basınçlandırın ve patlama basıncını kaydedin (örnek: 14 bar).</span></li>
+        <li><span>Güvenlik katsayısı seçin: pratik kural 1,3–1,5. Örnek: 14 / 1,3 ≈ 10,7 bar çalışma basıncı.</span></li>
+        <li><span>Uçuşta kullanacağınız haznelere çalışma basıncının biraz üzerinde tahribatsız basınç testi yapın.</span></li>
+        <li><span>Sonuçları fotoğraf ve videoyla belgeleyin; NTR'de güvenlik değerlendirmesine ve uygunluk matrisine koyun.</span></li>
+      </ol>
+    </div>
+    <div class="cols2">
+      <div class="box plain">
+        <h4>Sızdırmazlık</h4>
+        <ul>
+          <li>O-halka yuvası doğru boyutta, o-halka doğru seçilmiş olmalı.</li>
+          <li>Sıkışmayı önlemek için o-halkaları silikon gresle yağlayın.</li>
+          <li>Yuvada kir, saç vb. olmamalı; kauçuk contaların temas yüzeyinde derin çizik olmamalı.</li>
+        </ul>
+      </div>
+      <div class="box plain">
+        <h4>Güvenlik kuralları</h4>
+        <ul>
+          <li>Basınçlandırılmış rokete asla yaklaşmayın.</li>
+          <li>Koruyucu gözlük ve kulak koruyucu takın, özellikle patlama testlerinde.</li>
+          <li>Basınç haznelerinizi ve ekipmanınızı test edin.</li>
+          <li>Basıncı uzaktan boşaltabilecek bir valf tasarlayın (TY 2.2.2).</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===================== DERSLER ===================== -->
+  <article class="topic" id="t-dersler" data-group="Mühendislik temelleri" data-title="Örnek roketten çıkan dersler" hidden>
+    <header class="t-head">
+      <span class="eyebrow">Mühendislik temelleri</span>
+      <h2>Örnek roketten çıkan dersler</h2>
+      <p class="lead">Rakamlar simülasyondaki İKARUS-1 örneğinden (8 bar, 3 L hazne, 0,9 L itki suyu, 22 mm nozul, C<sub>d</sub> 0,96, 1 L çalkalanan su, 700 g yapı, 2 m/s rüzgâr) hesaplandı. Kartlardaki düğmeler değişikliği simülasyonda uygular; çoğu roketi hemen fırlatır.</p>
+    </header>
+    <div class="lesson-grid">
+      <div class="lesson"><h4>Hafif yapı her şeyden önemli</h4><p>Kalkış ağırlığı formülde paydada durur ve roketi yavaşlatır. Yapıyı 700 g'dan 400 g'a indirmek puanı yaklaşık yarı yarıya artırıyor.</p><span class="fig">6,3 → 9,2 puan</span><button type="button" class="try" data-try='{"dry":0.4}'>Dene →</button></div>
+      <div class="lesson"><h4>Basınç güçlü bir kaldıraç</h4><p>6 bar'dan 10 bar'a çıkmak puanı neredeyse ikiye katlıyor. Ama sınır 10 bar ve PET 9 bar civarında kalıcı şekil değiştiriyor; patlama testi şart.</p><span class="fig">4,4 → 8,1 puan</span><button type="button" class="try" data-try='{"P":10}'>Dene →</button></div>
+      <div class="lesson"><h4>İtki suyunu kural sınırlıyor</h4><p>Puan haznenin %35–40'ı su olduğunda en yüksek, ama tepe çok düz. İtki suyu çalkalanan sudan ağır olamaz: 1 L yük suyu ile en fazla 1 L itki suyu.</p><span class="fig">1,0 L → 6,4 · 1,125 L → 6,5 (kural dışı)</span><button type="button" class="try" data-try='{"Vsu":1}' data-sim="tarama">Dene →</button></div>
+      <div class="lesson"><h4>Yük ve itki suyu birlikte büyümeli</h4><p>Sadece çalkalanan suyu artırırsanız roket ağırlaşır ve puan düşer. Yük suyunu artırırken itki suyunu ve hazneyi de büyütmek çarpanı yükseltir.</p><span class="fig">Ağır yük ön ayarı: 7,4 puan</span><button type="button" class="try" data-try='{"Vc":5,"payload":2,"dry":0.9,"Vsu":2}'>Dene →</button></div>
+      <div class="lesson"><h4>Geniş nozul, ağır roket için iyi</h4><p>Ağır roket rampadan hızlı ayrılmak için kısa sürede büyük itki ister. 9 mm nozul suyu yavaş atar, yerçekimine daha çok enerji kaybedilir.</p><span class="fig">9 mm → 4,7 · 22 mm → 6,3 puan</span><button type="button" class="try" data-try='{"nozzle":9}'>Dene →</button></div>
+      <div class="lesson"><h4>Fırlatma tüpü büyük fark yaratabilir</h4><p>Roket su evresine hızlanmış girer ve basınçlı havanın enerjisinden daha çok pay alır. Sunumdaki tipik kazanç %10–15 irtifa; bu yavaş, ağır örnekte model çok daha büyük fark gösteriyor, iyimser kabul edin.</p><span class="fig">6,3 → 11,7 puan (modelde)</span><button type="button" class="try" data-try='{"tube":true}'>Dene →</button></div>
+      <div class="lesson"><h4>Çalkalanma: puandan çok raporda</h4><p>Bölme levhaları modelde hareket eden su kütlesini (≈180 g → 125 g) azaltıp sönümü artırıyor, ama bu basit modelde yanal kayma ve uçuş puanı neredeyse değişmiyor. Jüri ise çalkalanmayı nasıl tahmin edip kontrol ettiğinizi raporda görmek istiyor.</p><span class="fig">%0 → %50 bölme: puan farkı %0,01</span><button type="button" class="try" data-try='{"baffle":0}' data-sim="grafik">Dene →</button></div>
+      <div class="lesson"><h4>Paraşüt süreyi uzatır, kuralı sorun</h4><p>Süre puana eklendiği için paraşüt puanı artırıyor. Ancak kılavuz uçuşta rokete bağlı paraşütlerin açılmadığının kontrol edileceğini söylüyor.</p><span class="fig">6,3 → 7,0 puan</span><button type="button" class="try" data-try='{"chute":true}'>Dene →</button></div>
+      <div class="lesson"><h4>Kanat: hafif ve yüksek uçan rokette büyük kazanç</h4><p>Süzülme hem mesafeyi hem süreyi uzatır; ikisi de puana girer. Ama kanat ve kuyruk kütle ekler ve süzülmeye geçmek için yükseklik gerekir. Ağır örnekte kanat puanı düşürürken hafif, tüplü, 10 bar'lık "Süzülen" tasarımda puanı ikiye katlıyor. Model kuyruğun kanadı iyi dengelediğini varsayar; gerçek sonuç daha düşük olur.</p><span class="fig">Aynı roket: kanatsız 17,4 → açılır kanatla 34,4 puan</span><button type="button" class="try" data-try='{"dry":0.4,"payload":0.5,"Vc":2,"Vsu":0.5,"P":10,"tube":true,"wing":"acilir","wspan":1.6,"wchord":20,"winc":6}'>Dene →</button></div>
+    </div>
+  </article>
+
+  </div>
+ </div>
+</section>
+
+<section id="view-sim" role="tabpanel" aria-labelledby="nav-sim" hidden>
+ <div class="sim">
+  <form class="controls" id="controls" onsubmit="return false" aria-label="Tasarım ayarları">
+    <div class="controls-h"><b>Tasarım ayarları</b><span class="eyebrow">İKARUS-1</span></div>
+    <p class="hint">Kaydırıcıyı sürükleyin ya da değeri kutuya yazıp Enter'a basın. Kutuya kaydırıcı aralığının dışındaki değerler de yazılabilir.</p>
+    <div class="group">
+      <span class="eyebrow">Ön ayarlar</span>
+      <div class="presets">
+        <button type="button" class="btn" data-preset="ornek">İKARUS-1 (örnek)</button>
+        <button type="button" class="btn" data-preset="bolmesiz">Bölmesiz tank</button>
+        <button type="button" class="btn" data-preset="agir">Ağır yük</button>
+        <button type="button" class="btn" data-preset="hafif">Hafif yapı</button>
+        <button type="button" class="btn" data-preset="kuraldisi">Kural dışı</button>
+        <button type="button" class="btn" data-preset="yanruzgar">Yan rüzgâr</button>
+        <button type="button" class="btn" data-preset="suzulen">Süzülen (kanatlı)</button>
+      </div>
+    </div>
+    <div class="group">
+      <span class="eyebrow">Gövde ve yük</span>
+      <div class="ctl" data-k="Vc">
+        <div class="ctl-row"><label for="n-Vc">Basınç haznesi hacmi <span class="sym">V<sub>tank</sub></span></label><span class="numwrap"><input type="text" class="num" autocomplete="off" spellcheck="false" id="n-Vc" step="any" inputmode="decimal"><span class="unit">L</span></span></div>
+        <input type="range" id="c-Vc" min="1" max="6" step="0.25" value="3" aria-label="Basınç haznesi hacmi kaydırıcısı">
+      </div>
+      <div class="ctl" data-k="payload">
+        <div class="ctl-row"><label for="n-payload">Çalkalanan su (faydalı yük) <span class="sym">V<sub>yük</sub></span></label><span class="numwrap"><input type="text" class="num" autocomplete="off" spellcheck="false" id="n-payload" step="any" inputmode="decimal"><span class="unit">L</span></span></div>
+        <input type="range" id="c-payload" min="0.25" max="3" step="0.05" value="1" aria-label="Çalkalanan su (faydalı yük) kaydırıcısı">
+        <span class="hint" id="h-payload"></span>
+      </div>
+      <div class="ctl" data-k="dry">
+        <div class="ctl-row"><label for="n-dry">Boş yapı kütlesi <span class="sym">m<sub>boş</sub></span></label><span class="numwrap"><input type="text" class="num" autocomplete="off" spellcheck="false" id="n-dry" step="any" inputmode="decimal"><span class="unit">g</span></span></div>
+        <input type="range" id="c-dry" min="0.2" max="1.5" step="0.01" value="0.7" aria-label="Boş yapı kütlesi kaydırıcısı">
+        <span class="hint" id="h-dry"></span>
+      </div>
+      <div class="ctl" data-k="Dmm">
+        <div class="ctl-row"><label for="n-Dmm">Şişe (gövde) çapı <span class="sym">D<sub>şişe</sub></span></label><span class="numwrap"><input type="text" class="num" autocomplete="off" spellcheck="false" id="n-Dmm" step="any" inputmode="decimal"><span class="unit">mm</span></span></div>
+        <input type="range" id="c-Dmm" min="60" max="150" step="1" value="100" aria-label="Şişe (gövde) çapı kaydırıcısı">
+        <span class="hint" id="h-D"></span>
+      </div>
+      <div class="ctl" data-k="CD">
+        <div class="ctl-row"><label for="n-CD">Hava sürtünme katsayısı <span class="sym">C<sub>D</sub></span></label><span class="numwrap"><input type="text" class="num" autocomplete="off" spellcheck="false" id="n-CD" step="any" inputmode="decimal"><span class="unit"></span></span></div>
+        <input type="range" id="c-CD" min="0.15" max="0.9" step="0.01" value="0.42" aria-label="Hava sürtünme katsayısı kaydırıcısı">
+        <span class="hint">Gövde için. Kanatçık, kanat ve kuyruğun sürtünmesi ayrıca eklenir.</span>
+      </div>
+      <div class="ctl">
+        <span class="lbl" id="l-fins">Kanatçık boyutu</span>
+        <div class="seg" role="radiogroup" aria-labelledby="l-fins">
+          <input type="radio" name="fins" id="f-kucuk" value="kucuk"><label for="f-kucuk">Küçük</label>
+          <input type="radio" name="fins" id="f-orta" value="orta" checked><label for="f-orta">Orta</label>
+          <input type="radio" name="fins" id="f-buyuk" value="buyuk"><label for="f-buyuk">Büyük</label>
+        </div>
+      </div>
+      <div class="ctl" data-k="baffle">
+        <div class="ctl-row"><label for="n-baffle">Bölme levhası kapama oranı</label><span class="numwrap"><input type="text" class="num" autocomplete="off" spellcheck="false" id="n-baffle" step="any" inputmode="decimal"><span class="unit">%</span></span></div>
+        <input type="range" id="c-baffle" min="0" max="80" step="5" value="40" aria-label="Bölme levhası kapama oranı kaydırıcısı">
+        <span class="hint" id="h-baffle">Kural: tek bir levha tank kesitinin en fazla %50'sini kapatabilir.</span>
+      </div>
+    </div>
+    <div class="group">
+      <span class="eyebrow">İtki</span>
+      <div class="ctl" data-k="P">
+        <div class="ctl-row"><label for="n-P">Başlangıç basıncı (gösterge) <span class="sym">P<sub>basılan</sub></span></label><span class="numwrap"><input type="text" class="num" autocomplete="off" spellcheck="false" id="n-P" step="any" inputmode="decimal"><span class="unit">bar</span></span></div>
+        <input type="range" id="c-P" min="2" max="12" step="0.1" value="8" aria-label="Başlangıç basıncı (gösterge) kaydırıcısı">
+        <span class="hint" id="h-P"></span>
+      </div>
+      <div class="ctl" data-k="Vsu">
+        <div class="ctl-row"><label for="n-Vsu">İtki suyu <span class="sym">V<sub>su</sub></span></label><span class="numwrap"><input type="text" class="num" autocomplete="off" spellcheck="false" id="n-Vsu" step="any" inputmode="decimal"><span class="unit">L</span></span></div>
+        <input type="range" id="c-Vsu" min="0.05" max="3.6" step="0.01" value="0.9" aria-label="İtki suyu kaydırıcısı">
+        <span class="hint" id="h-wf"></span>
+      </div>
+      <div class="ctl" data-k="nozzle">
+        <div class="ctl-row"><label for="n-nozzle">Nozul çapı <span class="sym">D<sub>nozul</sub></span></label><span class="numwrap"><input type="text" class="num" autocomplete="off" spellcheck="false" id="n-nozzle" step="any" inputmode="decimal"><span class="unit">mm</span></span></div>
+        <input type="range" id="c-nozzle" min="6" max="30" step="0.5" value="22" aria-label="Nozul çapı kaydırıcısı">
+        <span class="hint" id="h-noz"></span>
+      </div>
+      <div class="ctl" data-k="cd">
+        <div class="ctl-row"><label for="n-cd">Nozul kayıp faktörü <span class="sym">C<sub>d</sub></span></label><span class="numwrap"><input type="text" class="num" autocomplete="off" spellcheck="false" id="n-cd" step="any" inputmode="decimal"><span class="unit"></span></span></div>
+        <input type="range" id="c-cd" min="0.8" max="1" step="0.01" value="0.96" aria-label="Nozul kayıp faktörü kaydırıcısı">
+        <span class="hint">Sürtünme yüzünden suyun idealden biraz yavaş çıkması; genelde 0,96 alınır.</span>
+      </div>
+      <label class="toggle" for="c-tube"><input type="checkbox" id="c-tube"> Fırlatma tüpü (30 cm)</label>
+    </div>
+    <div class="group" id="g-wing">
+      <span class="eyebrow">Kanat</span>
+      <div class="ctl">
+        <span class="lbl" id="l-wing">Kanat tipi</span>
+        <div class="seg" role="radiogroup" aria-labelledby="l-wing">
+          <input type="radio" name="wing" id="w-yok" value="yok" checked><label for="w-yok">Yok</label>
+          <input type="radio" name="wing" id="w-sabit" value="sabit"><label for="w-sabit">Sabit</label>
+          <input type="radio" name="wing" id="w-acilir" value="acilir"><label for="w-acilir">Açılır</label>
+        </div>
+        <span class="hint">Sabit kanat itkide de açıktır. Açılır kanat tepe noktasından hemen sonra açılır ve roketi süzülmeye geçirir.</span>
+      </div>
+      <div class="wing-params">
+      <div class="ctl" data-k="wspan">
+        <div class="ctl-row"><label for="n-wspan">Kanat açıklığı <span class="sym">b</span></label><span class="numwrap"><input type="text" class="num" autocomplete="off" spellcheck="false" id="n-wspan" step="any" inputmode="decimal"><span class="unit">m</span></span></div>
+        <input type="range" id="c-wspan" min="0.4" max="2.6" step="0.05" value="1.2" aria-label="Kanat açıklığı kaydırıcısı">
+        <span class="hint" id="h-wspan"></span>
+      </div>
+      <div class="ctl" data-k="wchord">
+        <div class="ctl-row"><label for="n-wchord">Kanat genişliği (veter) <span class="sym">c</span></label><span class="numwrap"><input type="text" class="num" autocomplete="off" spellcheck="false" id="n-wchord" step="any" inputmode="decimal"><span class="unit">cm</span></span></div>
+        <input type="range" id="c-wchord" min="6" max="35" step="1" value="18" aria-label="Kanat genişliği (veter) kaydırıcısı">
+      </div>
+      <div class="ctl" data-k="winc">
+        <div class="ctl-row"><label for="n-winc">Montaj açısı <span class="sym">i</span></label><span class="numwrap"><input type="text" class="num" autocomplete="off" spellcheck="false" id="n-winc" step="any" inputmode="decimal"><span class="unit">°</span></span></div>
+        <input type="range" id="c-winc" min="-2" max="12" step="0.5" value="6" aria-label="Montaj açısı kaydırıcısı">
+        <span class="hint">Kanadın gövdeye göre açısı; süzülme hızını belirler. Sabit kanatta büyük açı, itki sırasında roketi geriye döndürebilir.</span>
+      </div>
+        <span class="hint" id="h-wing"></span>
+      </div>
+    </div>
+    <div class="group">
+      <span class="eyebrow">Fırlatma</span>
+      <div class="ctl" data-k="angle">
+        <div class="ctl-row"><label for="n-angle">Fırlatma açısı (yataydan) <span class="sym">θ</span></label><span class="numwrap"><input type="text" class="num" autocomplete="off" spellcheck="false" id="n-angle" step="any" inputmode="decimal"><span class="unit">°</span></span></div>
+        <input type="range" id="c-angle" min="80" max="90" step="0.5" value="85" aria-label="Fırlatma açısı (yataydan) kaydırıcısı">
+      </div>
+      <div class="ctl" data-k="wind">
+        <div class="ctl-row"><label for="n-wind">Rüzgâr</label><span class="numwrap"><input type="text" class="num" autocomplete="off" spellcheck="false" id="n-wind" step="any" inputmode="decimal"><span class="unit">m/s</span></span></div>
+        <input type="range" id="c-wind" min="-6" max="6" step="0.5" value="2" aria-label="Rüzgâr kaydırıcısı">
+        <span class="hint">Artı: roketin eğik olduğu yöne doğru (arkadan) eser. Rüzgâra hafif dalgalanma eklenir.</span>
+      </div>
+      <div class="ctl" data-k="windZ">
+        <div class="ctl-row"><label for="n-windZ">Yan rüzgâr</label><span class="numwrap"><input type="text" class="num" autocomplete="off" spellcheck="false" id="n-windZ" step="any" inputmode="decimal"><span class="unit">m/s</span></span></div>
+        <input type="range" id="c-windZ" min="-6" max="6" step="0.5" value="0" aria-label="Yan rüzgâr kaydırıcısı">
+        <span class="hint">Artı: atış yönüne bakarken soldan sağa eser. Roketi uçuş düzleminin dışına iter; etkisini 3B görünümde izleyin.</span>
+      </div>
+      <label class="toggle" for="c-chute"><input type="checkbox" id="c-chute"> Paraşüt (tepe noktasından sonra)</label>
+    </div>
+  </form>
+
+  <div class="sim-main">
+    <div class="toolbar">
+      <div class="score-blk">
+        <div><span class="eyebrow">Uçuş puanı</span><span class="score-big" id="tb-score">0</span></div>
+        <div style="display:grid;gap:4px;justify-items:start">
+          <span class="chip" id="tb-verdict"></span>
+          <span class="delta same" id="tb-delta"></span>
+        </div>
+      </div>
+      <div class="tb-actions">
+        <button type="button" class="btn-main" id="play">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path id="play-ico" d="M6 4l10 6-10 6z" fill="currentColor"/></svg>
+          <span id="play-t">Fırlat</span>
+        </button>
+        <button type="button" class="btn" id="rewind" title="Uçuşu başa sar (tasarım değişmez)">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4v12M16 4l-9 6 9 6z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          Başa sar
+        </button>
+        <button type="button" class="btn btn-reset" id="reset" title="Bütün ayarları İKARUS-1'e döndür ve uçuşu başa sar">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10a6 6 0 1 0 2-4.5M4 3.5V7h3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Sıfırla
+        </button>
+        <button type="button" class="btn jump-ctl" id="jump-ctl">Parametreler ↓</button>
+        <button type="button" class="btn" id="pin" title="Bu tasarımı kesikli çizgiyle karşılaştırma için sabitle">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 3h6l-1 5 3 3H5l3-3zM10 11v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          Kıyas için sabitle
+        </button>
+      </div>
+    </div>
+
+    <div class="subtabs" role="tablist" aria-label="Simülasyon bölümleri">
+      <button type="button" role="tab" data-tab="ucus" aria-selected="true">Uçuş</button>
+      <button type="button" role="tab" data-tab="puan" aria-selected="false">Puan ve kurallar</button>
+      <button type="button" role="tab" data-tab="rapor" aria-selected="false">Hesap raporu</button>
+      <button type="button" role="tab" data-tab="grafik" aria-selected="false">Grafikler</button>
+      <button type="button" role="tab" data-tab="roket" aria-selected="false">Roket ve kütle</button>
+      <button type="button" role="tab" data-tab="tarama" aria-selected="false">Tasarım taraması</button>
+    </div>
+
+    <!-- UÇUŞ -->
+    <div class="panel" data-panel="ucus" role="tabpanel">
+      <div class="view-bar">
+        <div class="view-sw">
+          <span class="eyebrow" id="l-dim">Görünüm</span>
+          <div class="seg seg-dim" role="radiogroup" aria-labelledby="l-dim">
+            <input type="radio" name="dim" id="dim-2" value="2" checked><label for="dim-2">2B<span class="mb-x"> · yandan</span></label>
+            <input type="radio" name="dim" id="dim-3" value="3"><label for="dim-3">3B<span class="mb-x"> · serbest kamera</span></label>
+          </div>
+        </div>
+        <span class="small" id="dim-hint">Yandan iki kamera: fırlatma alanı ve roketin içi (kesit).</span>
+      </div>
+      <div class="feed-grid" id="feed2">
+        <div class="monitor">
+          <div class="mon-bar">
+            <span class="rec" id="rec"><i></i>Kamera 1<span class="mb-x"> · fırlatma alanı</span></span>
+            <div class="cam" role="group" aria-label="Kamera açısı">
+              <button type="button" data-cam="takip" aria-pressed="true">Takip</button>
+              <button type="button" data-cam="genel" aria-pressed="false">Tüm uçuş</button>
+            </div>
+          </div>
+          <canvas id="scene" role="img" aria-label="Fırlatma alanında roketin uçuşu"></canvas>
+        </div>
+        <div class="monitor">
+          <div class="mon-bar">
+            <span>Kamera 2 · roketin içi</span>
+            <span class="mono" id="cu-tag">kesit</span>
+          </div>
+          <canvas id="closeup" role="img" aria-label="Uçan roketin kesit görünüşü: basınç haznesi ve çalkalanma tankındaki su"></canvas>
+          <div class="mon-cap" id="cap"></div>
+        </div>
+      </div>
+      <div class="monitor feed3" id="feed3" hidden>
+        <div class="mon-bar">
+          <span class="rec" id="rec3"><i></i>3B sahne<span class="mb-x"> · fırlatma alanı</span></span>
+          <div class="cam" role="group" aria-label="3B kamera">
+            <button type="button" data-cam3="takip" aria-pressed="true">Takip</button>
+            <button type="button" data-cam3="yakin" aria-pressed="false">Yakın</button>
+            <button type="button" data-cam3="genel" aria-pressed="false">Genel</button>
+          </div>
+        </div>
+        <div class="stage3" id="stage3">
+          <canvas id="gl" aria-hidden="true"></canvas>
+          <canvas id="hud3" role="img" aria-label="Üç boyutlu fırlatma sahnesi; sürükleyerek kamerayı çevirin"></canvas>
+          <div class="stage3-msg" id="msg3" hidden></div>
+        </div>
+        <div class="mon-cap mon-cap3" id="cap3"></div>
+      </div>
+      <div class="playback">
+        <span class="time" id="pb-time">0,00 / 0,00 s</span>
+        <button type="button" class="icon-btn" id="pb-play" aria-label="Oynat veya duraklat">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path id="pb-ico" d="M6 4l10 6-10 6z" fill="currentColor"/></svg>
+        </button>
+        <input type="range" id="scrub" min="0" max="1000" step="1" value="0" aria-label="Uçuş zamanı">
+        <div class="pb-opts">
+          <label class="toggle" for="slowmo"><input type="checkbox" id="slowmo" checked> İtkide ağır çekim</label>
+          <label for="speed" class="small">Hız</label>
+          <select id="speed"><option value="0.25">0,25×</option><option value="0.5">0,5×</option><option value="1" selected>1×</option><option value="2">2×</option></select>
+        </div>
+      </div>
+      <div class="fl-grid">
+        <div class="card">
+          <div class="tele-top">
+            <h3>Anlık telemetri</h3>
+            <span class="phase" id="t-ph" data-ph="9">Rampada</span>
+          </div>
+          <div class="tele" id="tele"></div>
+        </div>
+        <div class="card">
+          <h3>Uçuş olayları</h3>
+          <p class="card-sub">Bir olaya tıklayın; uçuş o ana atlar.</p>
+          <ol class="events" id="events"></ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- PUAN -->
+    <div class="panel" data-panel="puan" role="tabpanel" hidden>
+      <div class="res-grid">
+        <div class="card">
+          <div class="score-card-top">
+            <div><span class="eyebrow">Uçuş puanı</span><div class="score-num" id="score">0</div></div>
+            <span class="delta same" id="delta"></span>
+          </div>
+          <div class="calc" id="calc"></div>
+          <div class="parts" id="parts"></div>
+          <div class="metrics" id="metrics"></div>
+        </div>
+        <div class="panel">
+          <div class="card">
+            <h3>Kurallara uygunluk</h3>
+            <div class="verdict" id="verdict"></div>
+            <ul class="rules" id="rules"></ul>
+            <p class="small">Modelin kontrol edemedikleri: Rectus Type 26 bağlantısı, 5 m güvenlik mesafesi, altimetre yuvası, 500 € bütçe ve tank kesit kuralı. Çalkalanma tankı modelde her zaman %50 doludur.</p>
+          </div>
+          <div class="card">
+            <h3>Sırada ne denesem?</h3>
+            <p class="card-sub">Her satır yalnızca o değişikliği uygulayıp yeniden hesaplar. Kural dışı kalan değişiklikler işaretlenir.</p>
+            <ul class="tips" id="tips"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RAPOR -->
+    <div class="panel" data-panel="rapor" role="tabpanel" hidden>
+      <div class="card">
+        <div class="rep-head"><h3>Uçuş sonuçları</h3><span class="small">Tasarım ayarları değiştikçe hemen yeniden hesaplanır.</span></div>
+        <div class="kpis" id="rep-kpi"></div>
+      </div>
+      <div class="rep-grid">
+        <div class="card">
+          <h3>Formüller ve t = 0 anındaki değerler</h3>
+          <ol class="eqs" id="rep-eq"></ol>
+          <div class="callout info" id="rep-diff"></div>
+        </div>
+        <div class="card">
+          <h3>Girdi ve türetilen değerler</h3>
+          <div class="tbl-wrap"><table class="rep-tbl"><thead><tr><th>Sembol</th><th>Açıklama</th><th class="num-c">Değer</th></tr></thead><tbody id="rep-in"></tbody></table></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="rep-head">
+          <h3>Zaman tablosu</h3>
+          <label class="small" for="rep-step">Adım
+            <select id="rep-step">
+              <option value="p2">İtki evresi · 2 ms</option>
+              <option value="p5" selected>İtki evresi · 5 ms</option>
+              <option value="f10">Tüm uçuş · 0,1 s</option>
+              <option value="f25">Tüm uçuş · 0,25 s</option>
+            </select>
+          </label>
+        </div>
+        <div class="tbl-wrap rep-scroll"><table class="rep-tbl tt"><thead><tr><th>t (s)</th><th>Evre</th><th class="num-c">İrtifa (m)</th><th class="num-c">Yatay (m)</th><th class="num-c">Hız (m/s)</th><th class="num-c">G yükü (g)</th><th class="num-c">İtki (N)</th><th class="num-c">Basınç (bar)</th><th class="num-c">Kalan su (ml)</th><th class="num-c">Su hızı (m/s)</th><th class="num-c">Kütle (kg)</th></tr></thead><tbody id="rep-tt"></tbody></table></div>
+      </div>
+    </div>
+
+    <!-- GRAFİK -->
+    <div class="panel" data-panel="grafik" role="tabpanel" hidden>
+      <p class="card-sub">Dikey çizgi, uçuş sekmesindeki zaman çubuğunun gösterdiği anı işaretler. İtki ve basınç grafikleri yalnızca itki evresini (milisaniye) gösterir. Burun açısında 90° dik yukarı, 0° ve ±180° yatay, −90° dik aşağı demektir; düşük hızlı tepe noktasında roket bir süre kuyruk üstü düşüp sonra dönebilir.</p>
+      <div class="charts">
+        <div class="card"><h3>İtki</h3><div class="chart-box"><canvas id="ch-thrust" aria-label="İtki - zaman"></canvas></div></div>
+        <div class="card"><h3>Hazne basıncı</h3><div class="chart-box"><canvas id="ch-press" aria-label="Basınç - zaman"></canvas></div></div>
+        <div class="card"><h3>İrtifa</h3><div class="chart-box"><canvas id="ch-alt" aria-label="İrtifa - zaman"></canvas></div></div>
+        <div class="card"><h3>Hız</h3><div class="chart-box"><canvas id="ch-vel" aria-label="Hız - zaman"></canvas></div></div>
+        <div class="card"><h3>Çalkalanma</h3><div class="chart-box"><canvas id="ch-slosh" aria-label="Çalkalanma - zaman"></canvas></div></div>
+        <div class="card"><h3>Burun açısı (yataydan)</h3><div class="chart-box"><canvas id="ch-pitch" aria-label="Eğim açısı - zaman"></canvas></div></div>
+        <div class="card"><h3>Eksenel ivme (G)</h3><div class="chart-box"><canvas id="ch-acc" aria-label="İvme - zaman"></canvas></div></div>
+        <div class="card"><h3>Kalan itki suyu</h3><div class="chart-box"><canvas id="ch-water" aria-label="Kalan su - zaman"></canvas></div></div>
+        <div class="card"><h3>Suyun çıkış hızı</h3><div class="chart-box"><canvas id="ch-ve" aria-label="Su çıkış hızı - zaman"></canvas></div></div>
+      </div>
+    </div>
+
+    <!-- ROKET -->
+    <div class="panel" data-panel="roket" role="tabpanel" hidden>
+      <div class="card">
+        <h3>Roketin yandan görünüşü</h3>
+        <span class="scroll-hint">Çizimi görmek için yana kaydırın →</span>
+        <div class="anatomy-scroll"><svg id="anatomy" viewBox="0 0 1000 340" role="img" aria-label="Roketin yandan görünüşü"></svg></div>
+      </div>
+      <div class="card">
+        <h3>Roketin üstten görünüşü: kanat ve kuyruk</h3>
+        <p class="small">Yandan görünüşte kanadın yalnızca gövdenin üstündeki kök kesiti görünür; kanadın şekli ve açıklığı burada, ölçekli olarak çizilir.</p>
+        <span class="scroll-hint">Çizimi görmek için yana kaydırın →</span>
+        <div class="anatomy-scroll"><svg id="planform" viewBox="0 0 1000 320" role="img" aria-label="Roketin üstten görünüşü: kanat, kuyruk ve kanatçıklar"></svg></div>
+        <div class="legend plan-info" id="plan-info"></div>
+      </div>
+      <div class="card">
+        <h3>Kütle bütçesi</h3>
+        <div class="mass-wrap" id="mass"></div>
+        <div class="legend" id="mass-legend"></div>
+      </div>
+      <div class="stats" id="stats"></div>
+      <div class="card notes">
+        <h3>Bu model neyi varsayıyor?</h3>
+        <ul>
+          <li>Uçuş üç boyutta hesaplanır: roket katı bir gövde (konum ve yunuslama ile sapma; kendi ekseni etrafında dönme yok). Çalkalanan su, tankın ilk yanal modunu temsil eden ve iki yana da salınabilen bir yay-kütle sistemi (frekans etkin ivmeyle değişir, bölme levhaları sönümü artırıp hareket eden kütleyi azaltır).</li>
+          <li>Su evresinde hava adyabatik genleşir (P = P₀·(V_hava0/V_hava)^1,4); su v_su = C_d·√(2ΔP/ρ) hızıyla çıkar, debi ṁ = ρ·A_n·v_su, itki F = ṁ·v_su. Su bitince kalan hava izantropik akışla kısa bir itki daha verir. Bütün adımlar "Hesap raporu" sekmesinde sayılarla gösterilir.</li>
+          <li>Tank boyları şişe çapından hesaplanır (10 cm çapta litre başına yaklaşık 12,7 cm), rampa 1 m. Sürtünme katsayısı girilen C_D'ye kanatçık payı eklenerek bulunur ve hücum açısıyla artar.</li>
+          <li>Kanatlı tasarımda kanat, roketin boş ağırlık merkezine yerleştirilir ve dihedral sayesinde yatay kaldığı varsayılır. Kuyruğa kanadı dengeleyen bir yatay dengeleyici eklenir (kuyruk hacim katsayısı 0,45) ve kütlesi hesaba katılır. Açılır kanat tepe noktasından 0,15 s sonra açılır. Bu varsayımlar iyi tasarlanmış bir planör içindir; süzülme sonuçlarını iyimser kabul edin.</li>
+          <li>Sızıntı, şişe esnemesi, su-hava karışımı, kanatçık hizasızlığı ve buna bağlı dönme yok sayılır; gerçek uçuşlar daha düşük çıkabilir. Fırlatma tüpünün etkisi bu modelde iyimserdir.</li>
+          <li>Yatay mesafe, yan rüzgârın yana ittiği kısım da dahil olmak üzere fırlatma noktasından iniş noktasına olan düz uzaklıktır.</li>
+          <li>Sonuçlar karşılaştırma ve öğrenme içindir. Gerçek tasarımı OpenRocket, Ansys ve fiziksel testlerle doğrulayın; rapora bu modelin çıktısını değil kendi analizlerinizi koyun.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TARAMA -->
+    <div class="panel" data-panel="tarama" role="tabpanel" hidden>
+      <div class="card">
+        <div class="sweep-head">
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><label for="sweep-var" class="lbl">Taranan ayar</label>
+          <select id="sweep-var">
+            <option value="wf">İtki suyu oranı</option>
+            <option value="P">Başlangıç basıncı</option>
+            <option value="dry">Boş yapı kütlesi</option>
+            <option value="payload">Çalkalanan su</option>
+            <option value="Vc">Basınç haznesi hacmi</option>
+            <option value="nozzle">Nozul çapı</option>
+            <option value="cd">Nozul kayıp faktörü</option>
+            <option value="Dmm">Şişe çapı</option>
+            <option value="CD">Hava sürtünme katsayısı</option>
+            <option value="wspan">Kanat açıklığı</option>
+            <option value="winc">Kanat montaj açısı</option>
+            <option value="baffle">Bölme levhası oranı</option>
+            <option value="wind">Rüzgâr</option>
+            <option value="windZ">Yan rüzgâr</option>
+            <option value="angle">Fırlatma açısı</option>
+          </select></div>
+          <span class="small" id="sweep-best"></span>
+        </div>
+        <p class="card-sub">Diğer bütün ayarlar sabit tutulur. Çarpı işaretli noktalar en az bir kuralı çiğner; yeşil halka kurala uygun en iyi nokta, siyah eşkenar dörtgen şu anki ayardır. Bir noktaya tıklayarak o değeri uygulayabilirsiniz.</p>
+        <div class="sweep-box"><canvas id="ch-sweep" aria-label="Tarama grafiği"></canvas></div>
+      </div>
+    </div>
+  </div>
+ </div>
+</section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
